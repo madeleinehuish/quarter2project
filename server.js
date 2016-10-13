@@ -41,7 +41,7 @@ app.use((req, res, next) => {
   res.sendStatus(406);
 });
 
-const books = require('./routes/movies');
+const movies = require('./routes/movies');
 const favorites = require('./routes/favorites');
 const token = require('./routes/token');
 const users = require('./routes/users');
