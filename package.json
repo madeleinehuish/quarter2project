@@ -1,0 +1,43 @@
+{
+  "name": "quarter2project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "knex": "knex",
+    "start": "nodemon server.js",
+    "heroku-postbuild": "knex migrate:latest",
+    "nf": "nf start",
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madeleinehuish/quarter2project.git"
+  },
+  "keywords": [],
+  "author": "Madeleine Huish <madeleinehuish@gmail.com> & Jade Getz <jade.getz@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/madeleinehuish/quarter2project/issues"
+  },
+  "homepage": "https://github.com/madeleinehuish/quarter2project#readme",
+  "dependencies": {
+    "bcrypt-as-promised": "^1.1.0",
+    "body-parser": "^1.15.2",
+    "boom": "^4.1.0",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "express-validation": "^1.0.1",
+    "humps": "^1.1.0",
+    "joi": "^9.1.1",
+    "jsonwebtoken": "^7.1.9",
+    "knex": "^0.12.5",
+    "morgan": "^1.7.0",
+    "pg": "^6.1.0"
+  },
+  "devDependencies": {
+    "dotenv": "^2.0.0",
+    "foreman": "^2.0.0",
+    "nodemon": "^1.11.0"
+  }
+}
