@@ -43,14 +43,16 @@ app.use((req, res, next) => {
 
 const movies = require('./routes/movies');
 const users = require('./routes/users');
+const token = require('./routes/token');
 // const favorites = require('./routes/favorites');
-// const token = require('./routes/token');
+
 
 
 app.use(movies);
 app.use(users);
+app.use(token);
 // app.use(favorites);
-// app.use(token);
+
 
 
 app.use((_req, res) => {
