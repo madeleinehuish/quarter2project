@@ -43,27 +43,27 @@ router.post('/users', (req, res, next) => {
       return knex('users')
         .insert(decamelizeKeys(insertUser), '*');
     })
-    .then((user) => {
-      return res.send(user);
-    })
-    // .then((rows) => {
-    //   const user = camelizeKeys(rows[0]);
-    //
-    //   delete user.hashedPassword;
-    //
-    //   const expiry = new Date(Date.now() + 1000 * 60 * 60 * 3); // 3 hours
-    //   const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET, {
-    //     expiresIn: '3h'
-    //   });
-    //
-    //   res.cookie('accessToken', token, {
-    //     httpOnly: true,
-    //     expires: expiry,
-    //     secure: router.get('env') === 'production'
-    //   });
-    //
-    //   res.send(user);
+    // .then((user) => {
+    //   return res.send(user);
     // })
+    .then((rows) => {
+      const user = camelizeKeys(rows[0]);
+
+      delete user.hashedPassword;
+
+      const expiry = new Date(Date.now() + 1000 * 60 * 60 * 3); // 3 hours
+      const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET, {
+        expiresIn: '3h'
+      });
+
+      res.cookie('accessToken', token, {
+        httpOnly: true,
+        expires: expiry,
+        secure: router.get('env') === 'production'
+      });
+      console.log('token is' + token);
+      res.send(user);
+    })
     .catch((err) => {
       next(err);
     });
