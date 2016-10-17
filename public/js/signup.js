@@ -51,7 +51,7 @@
     $.ajax(settings)
       .done(() => {
         console.log('yo');
-        window.location.href = '/index.html';
+        window.location.href = '/main.html';
         //maybe we change to a different landing page?
       })
       .fail(($xhr) => {

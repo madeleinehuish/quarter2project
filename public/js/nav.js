@@ -29,7 +29,7 @@
 
             $.ajax(options)
               .done(() => {
-                window.location.href = '/index.html';
+                window.location.href = '/main.html';
               })
               .fail(() => {
   							alert('Unable to log out. Please try again.');
@@ -60,7 +60,7 @@
           .text('Log in');
 
         $firstNavItems.append($signup);
-        $secondNavItems.append($login);
+        // $secondNavItems.append($login);
       }
     })
     .fail(($xhr) => {

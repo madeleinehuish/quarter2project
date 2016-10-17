@@ -31,8 +31,7 @@
 
     $.ajax(settings)
       .done(() => {
-        alert('got through login.js!');
-        window.location.href = '/index.html';
+        window.location.href = '/main.html';
       })
       .fail(($xhr) => {
 				alert($xhr.responseText, 3000);
