@@ -10,6 +10,37 @@ const { camelizeKeys, decamelizeKeys } = require('humps');
 // eslint-disable-next-line new-cap
 const router = express.Router();
 
+const authorize = function(req, res, next) {
+  const token = req.cookies.token;
+  console.log(req.cookies.token);
+  jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+    if (err) {
+      return next(boom.create(401, 'Unauthorized'));
+    }
+
+    req.token = decoded;
+
+    next();
+  });
+};
+
+console.log('into users!!!!!!!!!');
+
+router.get('/users/getname', authorize, (req, res, next) => {
+  console.log(req.token.userId);
+
+  knex('users')
+    .where('id', req.token.userId)
+    .then((rows) => {
+      const user = camelizeKeys(rows[0]);
+      res.send(user.firstName);
+    })
+    .catch((err) => {
+      next(err);
+    });
+});
+
+
 router.post('/users', (req, res, next) => {
   const { email, password } = req.body;
 

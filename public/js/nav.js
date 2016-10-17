@@ -8,34 +8,47 @@
       const $firstNavItems = $('.firstNavItem');
       const $secondNavItems = $('.secondNavItem');
 
+
       if (loggedIn) {
-        const $favorites = $('<a>')
-          .attr('href', '/favorites.html')
-          .text('Favorites');
+        // new code
+        $.ajax('/users/getname')
+          .done((data) => {
+            console.log(data);
+            const $logout = $('<a>').text(data);
+            $secondNavItems.append($logout);
+            $logout.click((event) => {
+              event.preventDefault();
 
-        const $logout = $('<a>').text('Log out');
+              const options = {
+                dataType: 'json',
+                type: 'DELETE',
+                url: '/token'
+              };
 
-        $logout.click((event) => {
-          event.preventDefault();
 
-          const options = {
-            dataType: 'json',
-            type: 'DELETE',
-            url: '/token'
-          };
 
-          $.ajax(options)
-            .done(() => {
-              window.location.href = '/index.html';
-            })
-            .fail(() => {
-							alert('Unable to log out. Please try again.');
-              // Materialize.toast('Unable to log out. Please try again.', 3000);
-            });
-        });
+            $.ajax(options)
+              .done(() => {
+                window.location.href = '/index.html';
+              })
+              .fail(() => {
+  							alert('Unable to log out. Please try again.');
+                // Materialize.toast('Unable to log out. Please try again.', 3000);
+              });
+          });
+          const $favorites = $('<a>')
+            .attr('href', '/favorites.html')
+            .text('Favorites');
 
-        $firstNavItems.append($favorites);
-        $secondNavItems.append($logout);
+          $firstNavItems.append($favorites);
+          })
+          .fail(() => {
+            alert('Unable to access users.');
+          })
+
+
+
+
       }
       else {
         const $signup = $('<a>')

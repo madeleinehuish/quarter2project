@@ -18,7 +18,7 @@ router.get('/token', (req, res) => {
     if (err) {
       return res.send(false);
     }
-    console.log('sending true from token.js!');
+    
     res.send(true);
   });
 });
