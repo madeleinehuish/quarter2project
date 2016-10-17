@@ -5,7 +5,7 @@ exports.seed = function(knex) {
     .then(() => {
       return knex('favorites').insert([{
         id: 1,
-        movies_id: 1,
+        movie_id: 1,
         user_id: 1,
         created_at: new Date('2016-10-16 14:26:16 UTC'),
         updated_at: new Date('2016-10-16 14:26:16 UTC')
