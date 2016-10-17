@@ -1,4 +1,4 @@
-$(document).ready(function() {
+// $(document).ready(function() {
 
 (function() {
   'use strict';
@@ -7,7 +7,7 @@ $(document).ready(function() {
   $.getJSON('/movies')
     .done((movies) => {
       const $movies = $('#movies');
-
+      console.log('in Movies');
       for (const movie of movies) {
         const $anchor = $('<a>')
           .attr({
@@ -37,4 +37,4 @@ $(document).ready(function() {
 
 // movies carousel
 
-});
+// });

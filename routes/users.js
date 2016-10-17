@@ -61,7 +61,6 @@ router.post('/users', (req, res, next) => {
     .first()
     .then((exists) => {
       if (exists) {
-        console.log('going to throw email already exists');
         throw boom.create(400, 'Email already exists');
       }
 

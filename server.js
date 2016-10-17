@@ -44,6 +44,7 @@ app.use(express.static(path.join('public')));
 const movies = require('./routes/movies');
 const users = require('./routes/users');
 const token = require('./routes/token');
+// const edit = require('./routes/edit');
 // const favorites = require('./routes/favorites');
 
 
@@ -51,6 +52,7 @@ const token = require('./routes/token');
 app.use(movies);
 app.use(users);
 app.use(token);
+// app.use(edit);
 // app.use(favorites);
 
 
