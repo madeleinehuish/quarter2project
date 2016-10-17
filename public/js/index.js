@@ -1,8 +1,9 @@
+$(document).ready(function() {
+
 (function() {
   'use strict';
-
+  // get movies
   // $('.parallax').parallax();
-
   $.getJSON('/movies')
     .done((movies) => {
       const $movies = $('#movies');
@@ -33,3 +34,7 @@
       alert('Unable to retrieve movies');
     });
 })();
+
+// movies carousel
+
+});

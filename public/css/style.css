@@ -1,3 +1,4 @@
+/* NAVIGATION */
 .fixed-nav-bar {
   position: fixed;
   top: 0;
@@ -11,8 +12,8 @@
 
 /* The element at the top of the page right after the fixed navigation bar
    MUST have sufficient top margin or else it will be covered by the bar */
-.content {
-  margin-top: 20px;
+.container {
+  margin-top: 100px;
 }
 
 /* Example responsive navigation menu  */
@@ -45,8 +46,8 @@ a.sitename, a:visited.sitename {
 }
 .menu-items li {
   display: inline-block;
-  margin-right: 10px;
-  margin-left: 10px;
+  /*margin-right: 10px;*/
+  /*margin-left: 10px;*/
 }
 .menu-items a {
   text-decoration: none;
@@ -105,9 +106,11 @@ a.sitename, a:visited.sitename {
     display: inline-block;
   }
 }
-
+/* Responsive */
 @media only screen and (max-width: 220px) {
   .sitename, .show, .hide {
     font-size: 14px;
   }
 }
+
+/*Movie Trailer Carousel*/
