@@ -274,6 +274,46 @@ exports.seed = function(knex) {
         // trailer_url: 'http://akamaicovers.oreilly.com/images/0636920032977/lrg.jpg',
         created_at: new Date('2016-06-26 14:26:16 UTC'),
         updated_at: new Date('2016-06-26 14:26:16 UTC')
+      }, {
+        id: 27,
+        title: "Jacob's Ladder",
+        director: 'Adrian Lyne',
+        year: '1990',
+        poster_path: 'http://ia.media-imdb.com/images/M/MV5BMjMwMDMxNzIzMF5BMl5BanBnXkFtZTgwMDMxNzQxMTE@._V1_SX300.jpg',
+        synopsis: 'Mourning his dead child, a haunted Vietnam War veteran attempts to discover his past while suffering from a severe case of dissociation. To do so, he must decipher reality and life from his own dreams, delusion, and perception of death.',
+        // trailer_url: 'http://akamaicovers.oreilly.com/images/0636920032977/lrg.jpg',
+        created_at: new Date('2016-06-26 14:26:16 UTC'),
+        updated_at: new Date('2016-06-26 14:26:16 UTC')
+      }, {
+        id: 28,
+        title: 'The Others',
+        director: 'Alejandro Amenábar',
+        year: '2001',
+        poster_path: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMTAxMDE4Mzc3ODNeQTJeQWpwZ15BbWU4MDY2Mjg4MDcx._V1_SX300.jpg',
+        synopsis: 'A woman who lives in a darkened old house with her two photosensitive children becomes convinced that her family home is haunted.',
+        // trailer_url: 'http://akamaicovers.oreilly.com/images/0636920032977/lrg.jpg',
+        created_at: new Date('2016-06-26 14:26:16 UTC'),
+        updated_at: new Date('2016-06-26 14:26:16 UTC')
+      }, {
+        id: 29,
+        title: 'Psycho',
+        director: 'Alfred Hitchcock',
+        year: '1960',
+        poster_path: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMDI3OWRmOTEtOWJhYi00N2JkLTgwNGItMjdkN2U0NjFiZTYwXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg',
+        synopsis: "A Phoenix secretary embezzles $40,000 from her employer's client, goes on the run, and checks into a remote motel run by a young man under the domination of his mother.",
+        // trailer_url: 'http://akamaicovers.oreilly.com/images/0636920032977/lrg.jpg',
+        created_at: new Date('2016-06-26 14:26:16 UTC'),
+        updated_at: new Date('2016-06-26 14:26:16 UTC')
+      }, {
+        id: 30,
+        title: 'The Birds',
+        director: 'Alfred Hitchcock',
+        year: '1963',
+        poster_path: 'https://images-na.ssl-images-amazon.com/images/M/MV5BZmY5N2U4NDItMzVjMS00ZWM1LThmM2YtOTQ0MTdjNWZiMmZjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg',
+        synopsis: 'A wealthy San Francisco socialite pursues a potential boyfriend to a small Northern California town that slowly takes a turn for the bizarre when birds of all kinds suddenly begin to attack people.',
+        // trailer_url: 'http://akamaicovers.oreilly.com/images/0636920032977/lrg.jpg',
+        created_at: new Date('2016-06-26 14:26:16 UTC'),
+        updated_at: new Date('2016-06-26 14:26:16 UTC')
       }]);
     })
     .then(() => {
