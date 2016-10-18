@@ -18,7 +18,7 @@ router.get('/token', (req, res) => {
     if (err) {
       return res.send(false);
     }
-    
+
     res.send(true);
   });
 });
@@ -61,7 +61,6 @@ router.post('/token', (req, res, next) => {
         expires: expiry,
         secure: router.get('env') === 'production'
       });
-
       res.send(user);
     })
     .catch(bcrypt.MISMATCH_ERROR, () => {

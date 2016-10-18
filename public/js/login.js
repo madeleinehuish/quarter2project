@@ -30,7 +30,10 @@
     };
 
     $.ajax(settings)
-      .done(() => {
+      .done((user) => {
+        console.log(user);
+        sessionStorage.setItem('userId', user.id);
+        console.log(user.id);
         window.location.href = '/main.html';
       })
       .fail(($xhr) => {

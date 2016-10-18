@@ -16,13 +16,13 @@
       contentType: 'application/json',
       data: JSON.stringify({ firstName, lastName, email, password }),
       dataType: 'json',
-      type: 'POST',
-      url: '/users'
+      type: 'PATCH',
+      url: `/users/${sessionStorage.getItem('userId')}`
     };
 
     $.ajax(settings)
       .done(() => {
-        window.location.href = '/index.html';
+        window.location.href = '/main.html';
         //maybe we change to a different landing page?
       })
       .fail(($xhr) => {

@@ -21,29 +21,29 @@ router.get('/movies', (_req, res, next) => {
     });
 });
 
-// router.get('/movies/:id', (req, res, next) => {
-//   const id = Number.parseInt(req.params.id);
-//
-//   if (Number.isNaN(id)) {
-//     return next();
-//   }
-//
-//   knex('movies')
-//     .where('id', id)
-//     .first()
-//     .then((row) => {
-//       if (!row) {
-//         throw boom.create(404, 'Not Found');
-//       }
-//
-//       const movie = camelizeKeys(row);
-//
-//       res.send(movie);
-//     })
-//     .catch((err) => {
-//       next(err);
-//     });
-// });
+router.get('/movies/:id', (req, res, next) => {
+  const id = Number.parseInt(req.params.id);
+
+  if (Number.isNaN(id)) {
+    return next();
+  }
+
+  knex('movies')
+    .where('id', id)
+    .first()
+    .then((row) => {
+      if (!row) {
+        throw boom.create(404, 'Not Found');
+      }
+
+      const movie = camelizeKeys(row);
+
+      res.send(movie);
+    })
+    .catch((err) => {
+      next(err);
+    });
+});
 
 // router.post('/movies', (req, res, next) => {
 //   const { title, author, genre, description, coverUrl } = req.body;
