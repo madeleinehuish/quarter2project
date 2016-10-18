@@ -1,3 +1,6 @@
+
+  // 'use strict';
+
 // Movie Trailer Carousel
 $(document).ready(function () {
 // Carousel
@@ -55,75 +58,83 @@ src="${url}" frameborder="0"/>`);
 
 
 // Movie Box Poster Grid - TEST
-const movieUrl = [
-  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg"
-]
+// const movieUrl = [
+//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg"
+// ]
 
+//
+// for (var i = 0; i < movieUrl.length; i++) {
+//     const url = movieUrl[i];
+//     const $movieBox = $(`<div class="item"></div><div id="hover" class="box-item"><div class="transform-item col-lg-2 col-md-2 col-sm-4 col-xs-4"><img class="movie-poster" src="${url}"/><div class="overlay-item"></div></div></div>`);
+//
+//     $movieBox.appendTo($(".row"));
+// }
 
-for (var i = 0; i < movieUrl.length; i++) {
-    const url = movieUrl[i];
-    const $movieBox = $(`<div class="item"></div><div id="hover" class="box-item"><div class="transform-item col-lg-2 col-md-2 col-sm-4 col-xs-4"><img class="movie-poster" src="${url}"/><div class="overlay-item"></div></div></div>`);
+const renderMovies = function(movies) {
+  const $movies = $('#grid');
+  for (var i = 0; i < movies.length; i++) {
+      const url = movies[i].posterPath;
+      const $movieBox = $(`<div class="item"></div><div id="hover" class="box-item"><div class="transform-item col-lg-2 col-md-2 col-sm-4 col-xs-4"><img class="movie-poster" src="${url}"/><div class="overlay-item"></div></div></div>`);
 
-    $movieBox.appendTo($(".row"));
+      $movieBox.appendTo($(".row"));
+  }
 }
 
-
-
 // Browse Movies
-(function() {
-  'use strict';
-  // get movies
-  // $('.parallax').parallax();
+
+
   $.getJSON('/movies')
     .done((movies) => {
-      const $movies = $('#movies');
-      console.log('in Movies');
-      for (const movie of movies) {
-        const $anchor = $('<a>')
-          .attr({
-            href: `/movie.html?id=${movie.id}`,
-            'data-delay': '50',
-            'data-tooltip': movie.title
-          })
-          .tooltip();
+      renderMovies(movies);
+      console.log(movies);
 
-        const $card = $('<div>').addClass('card');
-        const $cardImage = $('<div>').addClass('img-responsive');
-        const $col = $('<div>').addClass('col-sm-6 col-md-4 col-lg-3');
-        const $img = $('<img>').attr({ src: movie.posterPath, alt: movie.title });
-
-        $cardImage.append($img);
-        $anchor.append($cardImage);
-        $card.append($anchor);
-        $col.append($card);
-        $movies.append($col);
-      }
     })
     .fail(() => {
       // Materialize.toast('Unable to retrieve movies', 3000);
       alert('Unable to retrieve movies');
     });
-})();
+
+
+      // for (const movie of movies) {
+      //   const $anchor = $('<a>')
+      //     .attr({
+      //       href: `/movie.html?id=${movie.id}`,
+      //       'data-delay': '50',
+      //       'data-tooltip': movie.title
+      //     })
+      //     .tooltip();
+      //
+      //   const $card = $('<div>').addClass('card');
+      //   const $cardImage = $('<div>').addClass('img-responsive');
+      //   const $col = $('<div>').addClass('col-sm-6 col-md-4 col-lg-3');
+      //   const $img = $('<img>').attr({ src: movie.posterPath, alt: movie.title });
+      //
+      //   $cardImage.append($img);
+      //   $anchor.append($cardImage);
+      //   $card.append($anchor);
+      //   $col.append($card);
+      //   $movies.append($col);
+      // }

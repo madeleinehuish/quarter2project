@@ -70,7 +70,7 @@ exports.seed = function(knex) {
         director: 'Francis Ford Coppola',
         year: '1992',
         poster_path: 'http://ia.media-imdb.com/images/M/MV5BMTYyOTM5NzU3Nl5BMl5BanBnXkFtZTgwOTQxNjAxNzE@._V1_SX300.jpg',
-        synopsis: 'The vampire comes to England to seduce a visitor's fiancée and inflict havoc in the foreign land.',
+        synopsis: 'The vampire comes to England to seduce a visitor\'s fiancée and inflict havoc in the foreign land.',
         // trailer_url: 'http://akamaicovers.oreilly.com/images/0636920033486/lrg.jpg',
         created_at: new Date('2016-06-26 14:26:16 UTC'),
         updated_at: new Date('2016-06-26 14:26:16 UTC')
@@ -81,16 +81,6 @@ exports.seed = function(knex) {
         year: '1979',
         poster_path: 'https://images-na.ssl-images-amazon.com/images/M/MV5BNDNhN2IxZWItNGEwYS00ZDNhLThiM2UtODU3NWJlZjBkYjQxXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg',
         synopsis: '',
-        // trailer_url: 'http://akamaicovers.oreilly.com/images/0636920032977/lrg.jpg',
-        created_at: new Date('2016-06-26 14:26:16 UTC'),
-        updated_at: new Date('2016-06-26 14:26:16 UTC')
-      }, {
-        id: 8,
-        title: 'Night of the Living Dead',
-        director: 'George Romero',
-        year: '1968',
-        poster_path: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ2MjAxODUyNl5BMl5BanBnXkFtZTgwOTExMzUzMDE@._V1_SX300.jpg',
-        synopsis: 'There is panic throughout the nation as the dead suddenly come back to life. The film follows a group of characters who barricade themselves in an old farmhouse in an attempt the remain safe from these flesh eating monsters.',
         // trailer_url: 'http://akamaicovers.oreilly.com/images/0636920032977/lrg.jpg',
         created_at: new Date('2016-06-26 14:26:16 UTC'),
         updated_at: new Date('2016-06-26 14:26:16 UTC')
@@ -170,7 +160,7 @@ exports.seed = function(knex) {
         director: 'Joel M. Reed',
         year: '1976',
         poster_path: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMTM1NzE5Mjg1Ml5BMl5BanBnXkFtZTcwMzU3OTAyMQ@@._V1_SX300.jpg',
-        synopsis: 'Sardu, master of the Theatre of the Macabre, and his assistant Ralphus run a show in which, under the guise of 'magic', they torture and murder people in front of their audience. But what the punters see as a trick is actually real.',
+        synopsis: 'Sardu, master of the Theatre of the Macabre, and his assistant Ralphus run a show in which, under the guise of \'magic\', they torture and murder people in front of their audience. But what the punters see as a trick is actually real.',
         // trailer_url: 'http://akamaicovers.oreilly.com/images/0636920032977/lrg.jpg',
         created_at: new Date('2016-06-26 14:26:16 UTC'),
         updated_at: new Date('2016-06-26 14:26:16 UTC')
