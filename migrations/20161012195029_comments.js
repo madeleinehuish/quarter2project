@@ -21,5 +21,5 @@ exports.up = function(knex) {
 };
 
 exports.down = function(knex) {
-  return knex.schema.dropTable('comments');
+  return knex.schema.dropTableIfExists('comments');
 };

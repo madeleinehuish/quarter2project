@@ -24,10 +24,8 @@ const authorize = function(req, res, next) {
   });
 };
 
-console.log('into users!!!!!!!!!');
 
 router.get('/users/getname', authorize, (req, res, next) => {
-  console.log(req.token.userId);
 
   knex('users')
     .where('id', req.token.userId)

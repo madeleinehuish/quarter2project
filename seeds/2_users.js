@@ -4,7 +4,7 @@ exports.seed = function(knex) {
   // Deletes ALL existing entries
   return knex('users').del()
     .then(() => {
-      return knex('users').insert({
+      return knex('users').insert([{
         id: 1,
         first_name: 'Jessica',
         last_name: 'Bones',
@@ -12,7 +12,15 @@ exports.seed = function(knex) {
         hashed_password: '$2a$12$C9AYYmcLVGYlGoO4vSZTPud9ArJwbGRsJ6TUsNULzR48z8fOnTXbS',  // youreawizard
         created_at: new Date('2016-06-29 14:26:16 UTC'),
         updated_at: new Date('2016-06-29 14:26:16 UTC')
-      });
+      },{
+        id: 2,
+        first_name: 'Jack',
+        last_name: 'Black',
+        email: 'jack@black.com',
+        hashed_password: '$2a$12$C9AYYmcLVGYlGoO4vSZTPud9ArJwbGRsJ6TUsNULzR48z8fOnTXbS',  // youreawizard
+        created_at: new Date('2016-06-29 14:26:16 UTC'),
+        updated_at: new Date('2016-06-29 14:26:16 UTC')
+      }]);
     })
     .then(() => {
       return knex.raw(

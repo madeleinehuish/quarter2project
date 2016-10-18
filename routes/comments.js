@@ -19,7 +19,7 @@ const movieId = Number.parseInt(req.params.movieId);
   knex('comments')
   .innerJoin('users', 'users.id', 'comments.user_id')
   .where('movie_id', movieId)
-  .orderBy('comments.created_at', 'DESC')
+  .orderBy('comments.created_at', 'ASC')
   .then((rows) => {
     const comment = camelizeKeys(rows);
 
