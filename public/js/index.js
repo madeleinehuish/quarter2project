@@ -37,6 +37,7 @@ $(document).ready(function () {
     const $slide = $(`<div class="tile item"><div class="tile__media"><iframe class="tile__img" src="${url}" frameborder="0" allowfullscreen></iframe></div> <div class="tile__details"><div class="tile__title">${title}</div></div></div>`);
 
      $slide.appendTo($(".row__inner"));
+     
   }
 
  $('.tile').click(function(event) {
@@ -51,6 +52,14 @@ src="${url}" frameborder="0"/>`);
 
 });
 // End Movie Trailers
+
+
+
+
+
+
+
+
 
 // Browse Movies
 (function() {

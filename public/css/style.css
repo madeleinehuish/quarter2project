@@ -113,4 +113,11 @@ a.sitename, a:visited.sitename {
   }
 }
 
-/*Movie Trailer Carousel*/
+
+/* Index Body */
+body {
+  background-color: #111111;
+}
+container-fluid {
+	width: 100%;
+}
