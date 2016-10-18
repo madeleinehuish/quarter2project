@@ -1,0 +1,80 @@
+/* Movie Grid CSS */
+div#grid.container-fluid {
+  margin-left: 20px;
+  text-align: center;
+  margin-top: 7.5%;
+  width: 100%;
+}
+
+img.movie-poster {
+  padding-top: 0;
+  margin-top: 20%;
+  margin-bottom: 30%;
+  width: 100%;
+}
+
+div.box-item{
+  width: 6.66%;
+  height: 6.66%;
+  box-sizing: border-box;
+  transition: 1s transform;
+  transform-origin: top center;
+  float: left;
+  margin-right: 10%;
+  position: relative;
+  backface-visibility: hidden;
+}
+
+#hover {
+  /*background-color: #111111;*/
+}
+
+.transform-item {
+  width: 200%;
+  height: 200%;
+  transform: scale(1) translateZ(0px);
+  transform-origin: top left;
+}
+
+.overlay-item {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  touch-action: none;
+  transition: opacity 1s;
+}
+
+#hover:hover {
+  transform: scale(1.25);
+}
+
+@media all and (max-width: 980px) and (min-width: 280px) {
+  div.box-item {
+    width: 15.32%;
+    height: 15.32%;
+    box-sizing: border-box;
+    transition: 1s transform;
+    transform-origin: top center;
+    float: left;
+    margin-right: 14.75%;
+    position: relative;
+    backface-visibility: hidden;
+  }
+  .overlay-item {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    touch-action: none;
+    transition: opacity 1s;
+  }
+
+  #hover:hover {
+    transform: scale(1.25);
+  }
+}

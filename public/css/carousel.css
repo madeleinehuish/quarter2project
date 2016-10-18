@@ -109,7 +109,7 @@
 i.fa-chevron-circle-right {
   font-size: 3.5vw;
   color: white;
-  position: fixed;
+  position: absolute;
   right: 20px;
   bottom: 100px;
   opacity: .5;
@@ -123,7 +123,7 @@ i.fa-chevron-circle-right {
 i.fa-chevron-circle-left {
   font-size: 3.5vw;
   color: white;
-  position: fixed;
+  position: absolute;
   left: 20px;
   bottom: 100px;
   opacity: .5;

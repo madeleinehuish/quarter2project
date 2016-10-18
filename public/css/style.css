@@ -106,7 +106,7 @@ a.sitename, a:visited.sitename {
     display: inline-block;
   }
 }
-/* Responsive */
+/* NAV Responsive  Settings*/
 @media only screen and (max-width: 220px) {
   .sitename, .show, .hide {
     font-size: 14px;
@@ -114,7 +114,7 @@ a.sitename, a:visited.sitename {
 }
 
 
-/* Index Body */
+/* index.html body */
 body {
   background-color: #111111;
 }

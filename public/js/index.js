@@ -37,7 +37,7 @@ $(document).ready(function () {
     const $slide = $(`<div class="tile item"><div class="tile__media"><iframe class="tile__img" src="${url}" frameborder="0" allowfullscreen></iframe></div> <div class="tile__details"><div class="tile__title">${title}</div></div></div>`);
 
      $slide.appendTo($(".row__inner"));
-     
+
   }
 
  $('.tile').click(function(event) {
@@ -54,10 +54,41 @@ src="${url}" frameborder="0"/>`);
 // End Movie Trailers
 
 
+// Movie Box Poster Grid - TEST
+const movieUrl = [
+  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
+  "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg"
+]
 
 
+for (var i = 0; i < movieUrl.length; i++) {
+    const url = movieUrl[i];
+    const $movieBox = $(`<div class="item"></div><div id="hover" class="box-item"><div class="transform-item col-lg-2 col-md-2 col-sm-4 col-xs-4"><img class="movie-poster" src="${url}"/><div class="overlay-item"></div></div></div>`);
 
-
+    $movieBox.appendTo($(".row"));
+}
 
 
 
