@@ -34,6 +34,7 @@ const movieId = Number.parseInt(req.params.movieId);
 router.post('/comments', (req, res, next) => {
   const movieId = Number.parseInt(req.body.movieId);
   const userId = Number.parseInt(req.body.userId);
+  const comment = req.body.comment;
 
   if (!Number.isInteger(movieId)) {
     return next(boom.create(400, 'Movie ID must be an integer'));
@@ -49,7 +50,7 @@ router.post('/comments', (req, res, next) => {
       if (!movie) {
         throw boom.create(404, 'Movie not found')
       }
-      const comment = req.body.comment;
+
       const insertComment = {movieId: movieId, userId: userId, comment: comment};
 
       return knex('comments')

@@ -68,6 +68,39 @@
         });
     });
 
+    $('#commentsForm').submit((event) => {
+      event.preventDefault();
+
+      const comment = $('#userComment').val();
+
+      if (!comment) {
+  			alert('You did not write a comment');
+  			// return Materialize.toast('Email must not be blank', 3000);
+      }
+
+      const userId = sessionStorage.getItem('userId');
+      const movieId = 1;
+
+      const settings = {
+        contentType: 'application/json',
+        data: JSON.stringify({ movieId, userId, comment }),
+        dataType: 'json',
+        type: 'POST',
+        url: '/comments'
+      };
+
+      $.ajax(settings)
+        .done((user) => {
+          // console.log(user);
+          // sessionStorage.setItem('userId', user.id);
+          // console.log(user.id);
+          window.location.href = '/movies.html';
+        })
+        .fail(($xhr) => {
+  				alert($xhr.responseText, 3000);
+          // Materialize.toast($xhr.responseText, 3000);
+        });
+    });
 
 
   // $.getJSON(`/movies/${sessionStorage.getItem('movieId')}`)
@@ -96,8 +129,6 @@
       $movie.append($col);
 
       renderMovie(movie);
-
-      //movie comments generation
 
     })
 

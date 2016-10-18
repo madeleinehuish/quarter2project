@@ -19,8 +19,6 @@
       // return Materialize.toast('Password must not be blank', 3000);
     }
 
-    console.log('got 1/2 way through login.js!');
-
     const settings = {
       contentType: 'application/json',
       data: JSON.stringify({ email, password }),
