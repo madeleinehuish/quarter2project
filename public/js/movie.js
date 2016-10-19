@@ -103,6 +103,7 @@
     });
 
   const movId = sessionStorage.getItem('movieId');
+  console.log('mov id ' + movId);
   // $.getJSON(`/movies/${sessionStorage.getItem('movieId')}`)
   // $.getJSON('/movies/1')
   $.getJSON(`/movies/${movId}`)

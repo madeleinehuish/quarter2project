@@ -1,13 +1,21 @@
 
   // 'use strict';
-
+var x = [];
 // Movie Trailer Carousel
 $(document).ready(function () {
 
-//Movie Linking to movies page on click
-  $('.toMoviePage').click(function() {
+// const movieStorageObjectArray = [];
+// var pressedMovieIds = [];
 
-    window.location.href = '/movie.html';
+//Movie Linking to movies page on click
+  $('.toMoviePage').click(function(event) {
+    // alert(x);
+    console.log(event.target.id);
+    const pressedMovieId = event.target.id.substring('poster'.length);
+    console.log(pressedMovieId)
+    // movieStorageObjectArray[event.target]
+    sessionStorage.setItem('movieId', pressedMovieId);
+    window.location.href = `/movies/${pressedMovieId}`;
   })
 
 // Carousel
@@ -102,10 +110,16 @@ src="${url}" frameborder="0"/>`);
 
 const renderMovies = function(movies) {
   const $movies = $('#grid');
-  for (var i = 0; i < movies.length; i++) {
+  var posterId;
+  for (var i = 1; i < movies.length + 1; i++) {
       const url = movies[i].posterPath;
-      const $movieBox = $(`<div class="item"></div><div id="hover" class="box-item"><div class="transform-item col-lg-2 col-md-2 col-sm-4 col-xs-4"><img class="‘toMoviePage movie-poster" src="${url}"/><div class="overlay-item"></div></div></div>`);
+      posterId = movies[i].id;
+      x[i] = `poster${posterId}`;
+      const $movieBox = $(`<div class="item"></div><div id="hover" class="box-item "><div  class="transform-item  col-lg-2 col-md-2 col-sm-4 col-xs-4"><img class="movie-poster" src="${url}"/><div id="${x[i]}" class="overlay-item toMoviePage"></div></div></div>`);
 
+      // let pressedMovieIds[i] = x.substring('poster'.length);
+      // console.log(x);
+      // console.log(y);
       $movieBox.appendTo($(".row"));
   }
 }
@@ -114,9 +128,9 @@ const renderMovies = function(movies) {
 
   $.getJSON('/movies')
     .done((movies) => {
+      // movieStorageObjectArray = movies;
       console.log(movies[0].id);
       console.log(movies[0].title);
-      sessionStorage.setItem('movieId', movies[0].id);
       renderMovies(movies);
 
 
