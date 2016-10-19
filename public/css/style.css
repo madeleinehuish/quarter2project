@@ -1,5 +1,7 @@
 /* NAVIGATION */
 .fixed-nav-bar {
+  font-family: 'Creepster', cursive;
+  font-size: 2em;
   position: fixed;
   top: 0;
   left: 0;
