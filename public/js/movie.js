@@ -1,6 +1,8 @@
 (function() {
   'use strict';
 
+  console.log('got back into movie.js');
+
   const renderMovie = function(movie) {
     $('#movie-title-moviespage').text(movie.title);
     $('#movie-director-moviespage').text(movie.director);
@@ -102,9 +104,11 @@
         });
     });
 
-
+  const movId = sessionStorage.getItem('movieId');
+  console.log('mov id ' + movId);
   // $.getJSON(`/movies/${sessionStorage.getItem('movieId')}`)
-  $.getJSON('/movies/1')
+  // $.getJSON('/movies/1')
+  $.getJSON(`/movies/${movId}`)
     .done((movie) => {
 
 
@@ -137,7 +141,7 @@
       alert('Unable to retrieve movies');
     });
 
-    $.getJSON('/comments/1')
+    $.getJSON(`/comments/${movId}`)
       .done((comments) => {
 
         renderComments(comments);

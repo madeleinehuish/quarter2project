@@ -1,8 +1,25 @@
 
   // 'use strict';
-
+var x = [];
 // Movie Trailer Carousel
 $(document).ready(function () {
+
+// const movieStorageObjectArray = [];
+// var pressedMovieIds = [];
+
+//Movie Linking to movies page on click
+  $('.toMoviePage').click(function(event) {
+    // alert(x);
+    // console.log(event.target.id);
+    const pressedMovieId = event.target.id.substring('poster'.length);
+    // console.log(pressedMovieId)
+    // movieStorageObjectArray[event.target]
+    sessionStorage.setItem('movieId', pressedMovieId);
+    // window.location.href = '/movies.html';
+    window.location.href = `/movies.html?id=${pressedMovieId}`
+    // window.location.href = `/movies/${pressedMovieId}`;
+  })
+
 // Carousel
     let displacement = 0;
     $('.left').click(function() {
@@ -95,14 +112,17 @@ src="${url}" frameborder="0"/>`);
 
 const renderMovies = function(movies) {
   const $movies = $('#grid');
-  for (var i = 0; i < movies.length; i++) {
+  var posterId;
+  for (var i = 1; i <= movies.length; i++) {
       const url = movies[i].posterPath;
-<<<<<<< Updated upstream
-      const $movieBox = $(`<div class="box-item"></div><div id="hover" class="box-item"><div class="transform-item col-lg-2 col-md-2 col-sm-4 col-xs-4"><img class="‘toMoviePage movie-poster" src="${url}"/><div class="overlay-item"></div></div></div>`);
-=======
-      const $movieBox = $(`<div class="item"></div><div id="hover" class="box-item"><div class="transform-item col-lg-2 col-md-2 col-sm-4 col-xs-4"><img class="toMoviePage movie-poster" src="${url}"/><div class="overlay-item"></div></div></div>`);
->>>>>>> Stashed changes
 
+      posterId = movies[i].id;
+      x[i] = `poster${posterId}`;
+      const $movieBox = $(`<div class="item"></div><div id="hover" class="box-item "><div  class="transform-item  col-lg-2 col-md-2 col-sm-4 col-xs-4"><img class="movie-poster" src="${url}"/><div id="${x[i]}" class="overlay-item toMoviePage"></div></div></div>`);
+
+      // let pressedMovieIds[i] = x.substring('poster'.length);
+      // console.log(x);
+      // console.log(y);
       $movieBox.appendTo($(".row"));
   }
 }
@@ -111,8 +131,10 @@ const renderMovies = function(movies) {
 
   $.getJSON('/movies')
     .done((movies) => {
+      // movieStorageObjectArray = movies;
+
       renderMovies(movies);
-      console.log(movies);
+
 
     })
     .fail(() => {

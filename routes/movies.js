@@ -22,7 +22,9 @@ router.get('/movies', (_req, res, next) => {
 });
 
 router.get('/movies/:id', (req, res, next) => {
+  console.log('got to movies/id');
   const id = Number.parseInt(req.params.id);
+  console.log(id);
 
   if (Number.isNaN(id)) {
     return next();
