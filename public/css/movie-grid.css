@@ -1,6 +1,6 @@
 /* Movie Grid CSS */
-div.row {
-  height: 4000px;
+div.row.poster {
+  height: 100vh;
 }
 div#grid.container-fluid {
   margin-left: 20px;
@@ -18,8 +18,8 @@ img.movie-poster {
 
 div.box-item{
   width: 6.66%;
-  height: 6.66%;
-  box-sizing: border-box;
+  height: 300px;
+  /*box-sizing: border-box;*/
   transition: 1s transform;
   transform-origin: top center;
   float: left;

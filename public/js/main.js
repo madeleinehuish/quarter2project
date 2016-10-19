@@ -76,31 +76,6 @@ src="${url}" frameborder="0"/>`);
 
 // Movie Box Poster Grid - TEST
 // const movieUrl = [
-//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg",
-//   "https://image.tmdb.org/t/p/original/vBhBNYJdfPs8yWZg6tRf3eSPsoD.jpg"
-// ]
 
 //
 // for (var i = 0; i < movieUrl.length; i++) {
@@ -113,7 +88,7 @@ src="${url}" frameborder="0"/>`);
 const renderMovies = function(movies) {
   const $movies = $('#grid');
   var posterId;
-  for (var i = 1; i <= movies.length; i++) {
+  for (var i = 0; i < movies.length; i++) {
       const url = movies[i].posterPath;
 
       posterId = movies[i].id;
@@ -123,7 +98,7 @@ const renderMovies = function(movies) {
       // let pressedMovieIds[i] = x.substring('poster'.length);
       // console.log(x);
       // console.log(y);
-      $movieBox.appendTo($(".row"));
+      $movieBox.appendTo($(".posters"));
   }
 }
 
