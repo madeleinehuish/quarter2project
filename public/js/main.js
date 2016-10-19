@@ -3,6 +3,13 @@
 
 // Movie Trailer Carousel
 $(document).ready(function () {
+
+//Movie Linking to movies page on click
+  $('.toMoviePage').click(function() {
+
+    window.location.href = '/movie.html';
+  })
+
 // Carousel
     let displacement = 0;
     $('.left').click(function() {
@@ -107,8 +114,11 @@ const renderMovies = function(movies) {
 
   $.getJSON('/movies')
     .done((movies) => {
+      console.log(movies[0].id);
+      console.log(movies[0].title);
+      sessionStorage.setItem('movieId', movies[0].id);
       renderMovies(movies);
-      console.log(movies);
+
 
     })
     .fail(() => {
