@@ -25,13 +25,14 @@ const authorize = function(req, res, next) {
 };
 
 
-router.get('/users/getname', authorize, (req, res, next) => {
+router.get('/users', authorize, (req, res, next) => {
 
   knex('users')
     .where('id', req.token.userId)
     .then((rows) => {
       const user = camelizeKeys(rows[0]);
-      res.send(user.firstName);
+      delete user.hashedPassword;
+      res.send(user);
     })
     .catch((err) => {
       next(err);
@@ -40,7 +41,7 @@ router.get('/users/getname', authorize, (req, res, next) => {
 
 
 router.post('/users', (req, res, next) => {
-  const { email, password } = req.body;
+  const { firstName, lastName, email, password } = req.body;
 
   if (!email || !email.trim()) {
     return next(boom.create(400, 'Email must not be blank'));
@@ -84,10 +85,12 @@ router.post('/users', (req, res, next) => {
       });
 
       res.cookie('accessToken', token, {
+      // res.cookie('userCookie', userCookie, {
         httpOnly: true,
         expires: expiry,
         secure: router.get('env') === 'production'
       });
+
       console.log('token is' + token);
       res.send(user);
     })

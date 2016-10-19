@@ -24,8 +24,8 @@ router.get('/token', (req, res) => {
 });
 
 router.post('/token', (req, res, next) => {
-  const { email, password } = req.body;
-  console.log('going into post token...');
+  const { firstName, lastName, email, password } = req.body;
+
   if (!email || !email.trim()) {
     return next(boom.create(400, 'Email must not be blank'));
   }
@@ -61,6 +61,7 @@ router.post('/token', (req, res, next) => {
         expires: expiry,
         secure: router.get('env') === 'production'
       });
+
       res.send(user);
     })
     .catch(bcrypt.MISMATCH_ERROR, () => {

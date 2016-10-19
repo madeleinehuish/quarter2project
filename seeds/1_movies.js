@@ -87,7 +87,7 @@ exports.seed = function(knex) {
       }, {
         id: 9,
         title: 'The Evil Dead',
-        director: 'Ridley Scott',
+        director: 'Sam Raimi',
         year: '1981',
         poster_path: 'https://images-na.ssl-images-amazon.com/images/M/MV5BODc2MmVjZmUtNjAzMS00MDNiLWIyM2YtOGEzMjg0YjRhMzRmXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg',
         synopsis: 'Five friends travel to a cabin in the woods, where they unknowingly release flesh-possessing demons.',

@@ -4,6 +4,24 @@
   // $('.button-collapse').sideNav();
 
   // eslint-disable-next-line max-statements
+
+  $(document).ready(function(){
+    $.getJSON('/users')
+      .done((user) => {
+
+        $('#firstName').val(user.firstName).addClass('toGrey');
+        $('#lastName').val(user.lastName).addClass('toGrey');
+        $('#email').val(user.email).addClass('toGrey');
+        $('#password').val('password').addClass('toGrey');
+        
+      })
+      .fail(() => {
+        alert('Unable to retrieve user info');
+      });
+
+
+  })
+
   $('#editForm').submit((event) => {
     event.preventDefault();
 
@@ -31,4 +49,6 @@
         // Materialize.toast($xhr.responseText, 3000);
       });
   });
+
+
 })();

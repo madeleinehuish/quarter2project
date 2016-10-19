@@ -1,8 +1,6 @@
 (function() {
   'use strict';
 
-  console.log('got back into movie.js');
-
   const renderMovie = function(movie) {
     $('#movie-title-moviespage').text(movie.title);
     $('#movie-director-moviespage').text(movie.director);
@@ -13,7 +11,6 @@
   };
 
   const renderComments = function(comments) {
-    console.log(comments);
 
     for (let i = 0; i < comments.length; i++) {
       $('#movie-comments-moviespage').append($('<h4>').text('"' + comments[i].comment + '"'));
@@ -93,9 +90,7 @@
 
       $.ajax(settings)
         .done((user) => {
-          // console.log(user);
           // sessionStorage.setItem('userId', user.id);
-          // console.log(user.id);
           window.location.href = '/movies.html';
         })
         .fail(($xhr) => {
@@ -105,12 +100,9 @@
     });
 
   const movId = sessionStorage.getItem('movieId');
-  console.log('mov id ' + movId);
-  // $.getJSON(`/movies/${sessionStorage.getItem('movieId')}`)
-  // $.getJSON('/movies/1')
+
   $.getJSON(`/movies/${movId}`)
     .done((movie) => {
-
 
       const $movie = $('#movie-poster-moviespage');
       const $anchor = $('<a>')

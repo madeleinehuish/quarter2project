@@ -4,20 +4,11 @@ var x = [];
 // Movie Trailer Carousel
 $(document).ready(function () {
 
-// const movieStorageObjectArray = [];
-// var pressedMovieIds = [];
-
 //Movie Linking to movies page on click
   $('.toMoviePage').click(function(event) {
-    // alert(x);
-    // console.log(event.target.id);
     const pressedMovieId = event.target.id.substring('poster'.length);
-    // console.log(pressedMovieId)
-    // movieStorageObjectArray[event.target]
     sessionStorage.setItem('movieId', pressedMovieId);
-    // window.location.href = '/movies.html';
-    window.location.href = `/movies.html?id=${pressedMovieId}`
-    // window.location.href = `/movies/${pressedMovieId}`;
+    window.location.href = `/movies.html?id=${pressedMovieId}`;
   })
 
 // Carousel
@@ -56,15 +47,14 @@ $(document).ready(function () {
     const title = filmTitles[i];
     const $slide = $(`<div class="tile item"><div class="tile__media"><iframe class="tile__img" src="${url}" frameborder="0" allowfullscreen></iframe></div> <div class="tile__details"><div class="tile__title">${title}</div></div></div>`);
 
-     $slide.appendTo($(".row__inner"));
+    $slide.appendTo($(".row__inner"));
 
   }
 
  $('.tile').click(function(event) {
 
       const url = $(event.currentTarget).find('.tile__img').attr('src');
-      const $iframe = $(`<iframe id="ytplayer" type="text/html" width="640" height="360"
-src="${url}" frameborder="0"/>`);
+      const $iframe = $(`<iframe id="ytplayer" type="text/html" width="640" height="360" src="${url}" frameborder="0"/>`);
 
       $("#viewscreen").empty();
       $( "#viewscreen" ).append( $iframe );
@@ -73,17 +63,7 @@ src="${url}" frameborder="0"/>`);
 });
 // End Movie Trailers
 
-
-// Movie Box Poster Grid - TEST
-// const movieUrl = [
-
-//
-// for (var i = 0; i < movieUrl.length; i++) {
-//     const url = movieUrl[i];
-//     const $movieBox = $(`<div class="item"></div><div id="hover" class="box-item"><div class="transform-item col-lg-2 col-md-2 col-sm-4 col-xs-4"><img class="movie-poster" src="${url}"/><div class="overlay-item"></div></div></div>`);
-//
-//     $movieBox.appendTo($(".row"));
-// }
+//Start Movie Grid
 
 const renderMovies = function(movies) {
   const $movies = $('#grid');
@@ -95,9 +75,6 @@ const renderMovies = function(movies) {
       x[i] = `poster${posterId}`;
       const $movieBox = $(`<div class="item"></div><div id="hover" class="box-item "><div  class="transform-item  col-lg-2 col-md-2 col-sm-4 col-xs-4"><img class="movie-poster" src="${url}"/><div id="${x[i]}" class="overlay-item toMoviePage"></div></div></div>`);
 
-      // let pressedMovieIds[i] = x.substring('poster'.length);
-      // console.log(x);
-      // console.log(y);
       $movieBox.appendTo($(".posters"));
   }
 }
@@ -116,25 +93,3 @@ const renderMovies = function(movies) {
       // Materialize.toast('Unable to retrieve movies', 3000);
       alert('Unable to retrieve movies');
     });
-
-
-      // for (const movie of movies) {
-      //   const $anchor = $('<a>')
-      //     .attr({
-      //       href: `/movie.html?id=${movie.id}`,
-      //       'data-delay': '50',
-      //       'data-tooltip': movie.title
-      //     })
-      //     .tooltip();
-      //
-      //   const $card = $('<div>').addClass('card');
-      //   const $cardImage = $('<div>').addClass('img-responsive');
-      //   const $col = $('<div>').addClass('col-sm-6 col-md-4 col-lg-3');
-      //   const $img = $('<img>').attr({ src: movie.posterPath, alt: movie.title });
-      //
-      //   $cardImage.append($img);
-      //   $anchor.append($cardImage);
-      //   $card.append($anchor);
-      //   $col.append($card);
-      //   $movies.append($col);
-      // }

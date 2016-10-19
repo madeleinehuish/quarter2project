@@ -11,10 +11,10 @@
 
       if (loggedIn) {
         // new code
-        $.ajax('/users/getname')
+        $.ajax('/users')
           .done((data) => {
             console.log(data);
-            const $logout = $('<a>').text(data);
+            const $logout = $('<a>').text(data.firstName);
             $secondNavItems.append($logout);
             $logout.click((event) => {
               event.preventDefault();
