@@ -91,7 +91,6 @@ router.post('/users', (req, res, next) => {
         secure: router.get('env') === 'production'
       });
 
-      console.log('token is' + token);
       res.send(user);
     })
     .catch((err) => {

@@ -54,6 +54,11 @@ div.box-item{
   transform: scale(1.25);
 }
 
+li.dropdown.firstNavItem {
+  color: #aaa;
+
+}
+
 @media all and (max-width: 980px) and (min-width: 280px) {
   div.box-item {
     width: 15.32%;

@@ -106,6 +106,7 @@ a.sitename, a:visited.sitename {
   .hide {
     display: none;
   }
+  
   #menu:target .show {
     display: none;
   }
