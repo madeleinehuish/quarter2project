@@ -1,4 +1,7 @@
 /* Movie Grid CSS */
+div.row {
+  height: 4000px;
+}
 div#grid.container-fluid {
   margin-left: 20px;
   text-align: center;
@@ -8,8 +11,8 @@ div#grid.container-fluid {
 
 img.movie-poster {
   padding-top: 0;
-  margin-top: 20%;
-  margin-bottom: 30%;
+  /*margin-top: 20%;*/
+  /*margin-bottom: 30%;*/
   width: 100%;
 }
 

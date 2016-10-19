@@ -97,7 +97,11 @@ const renderMovies = function(movies) {
   const $movies = $('#grid');
   for (var i = 0; i < movies.length; i++) {
       const url = movies[i].posterPath;
+<<<<<<< Updated upstream
       const $movieBox = $(`<div class="box-item"></div><div id="hover" class="box-item"><div class="transform-item col-lg-2 col-md-2 col-sm-4 col-xs-4"><img class="‘toMoviePage movie-poster" src="${url}"/><div class="overlay-item"></div></div></div>`);
+=======
+      const $movieBox = $(`<div class="item"></div><div id="hover" class="box-item"><div class="transform-item col-lg-2 col-md-2 col-sm-4 col-xs-4"><img class="toMoviePage movie-poster" src="${url}"/><div class="overlay-item"></div></div></div>`);
+>>>>>>> Stashed changes
 
       $movieBox.appendTo($(".row"));
   }
