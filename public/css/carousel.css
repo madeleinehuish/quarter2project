@@ -139,3 +139,12 @@ i.fa-chevron-circle-right:hover {
 i.fa-chevron-circle-left:hover {
   opacity: 1;
 }
+
+@media all and (max-width: 980px) and (min-width: 280px) {
+  /*#viewscreen {
+    margin: auto;
+    margin-top: 7%;
+    width: 320px;
+    height: 180px;
+    background-color: #333333;
+  }*/

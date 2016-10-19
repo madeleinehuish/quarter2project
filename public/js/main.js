@@ -35,8 +35,9 @@ $(document).ready(function () {
 
  //end carousel
 
- //start trailers
-      const renderTrailers = function(movies) {
+
+// Trailers
+const renderTrailers = function(movies) {
 
           for (var i = 0; i < movies.length; i++) {
             if (movies[i].trailerUrl) {
