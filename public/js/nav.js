@@ -5,8 +5,8 @@
 
   $.getJSON('/token')
     .done((loggedIn) => {
-      const $firstNavItems = $('.firstNavItem');
-      const $secondNavItems = $('.secondNavItem');
+      // const $firstNavItems = $('.firstNavItem');
+      // const $secondNavItems = $('.secondNavItem');
 
 
       if (loggedIn) {
@@ -14,9 +14,9 @@
         $.ajax('/users')
           .done((data) => {
             console.log(data);
-            const $logout = $('<a>').text(data.firstName);
-            $secondNavItems.append($logout);
-            $logout.click((event) => {
+            $('.firstNavItem').text(data.firstName);
+            // $secondNavItems.append($logout);
+            $('.secondNavItem').click((event) => {
               event.preventDefault();
 
               const options = {
@@ -36,11 +36,11 @@
                 // Materialize.toast('Unable to log out. Please try again.', 3000);
               });
           });
-          const $favorites = $('<a>')
-            .attr('href', '/favorites.html')
-            .text('Favorites');
-
-          $firstNavItems.append($favorites);
+          // const $favorites = $('<a>')
+          //   .attr('href', '/favorites.html')
+          //   .text('Favorites');
+          //
+          // $firstNavItems.append($favorites);
           })
           .fail(() => {
             alert('Unable to access users.');

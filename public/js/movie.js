@@ -78,7 +78,7 @@
       }
 
       const userId = sessionStorage.getItem('userId');
-      const movieId = 1;
+      const movieId = sessionStorage.getItem('movieId');
 
       const settings = {
         contentType: 'application/json',

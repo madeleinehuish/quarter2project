@@ -12,8 +12,8 @@
         $('#firstName').val(user.firstName).addClass('toGrey');
         $('#lastName').val(user.lastName).addClass('toGrey');
         $('#email').val(user.email).addClass('toGrey');
-        $('#password').val('password').addClass('toGrey');
-        
+        $('#password').addClass('toGrey');
+
       })
       .fail(() => {
         alert('Unable to retrieve user info');
