@@ -1,6 +1,8 @@
 (function() {
   'use strict';
 
+  console.log('got back into movie.js');
+
   const renderMovie = function(movie) {
     $('#movie-title-moviespage').text(movie.title);
     $('#movie-director-moviespage').text(movie.director);

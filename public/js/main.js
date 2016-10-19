@@ -10,12 +10,14 @@ $(document).ready(function () {
 //Movie Linking to movies page on click
   $('.toMoviePage').click(function(event) {
     // alert(x);
-    console.log(event.target.id);
+    // console.log(event.target.id);
     const pressedMovieId = event.target.id.substring('poster'.length);
-    console.log(pressedMovieId)
+    // console.log(pressedMovieId)
     // movieStorageObjectArray[event.target]
     sessionStorage.setItem('movieId', pressedMovieId);
-    window.location.href = `/movies/${pressedMovieId}`;
+    // window.location.href = '/movies.html';
+    window.location.href = `/movies.html?id=${pressedMovieId}`
+    // window.location.href = `/movies/${pressedMovieId}`;
   })
 
 // Carousel
@@ -111,7 +113,7 @@ src="${url}" frameborder="0"/>`);
 const renderMovies = function(movies) {
   const $movies = $('#grid');
   var posterId;
-  for (var i = 1; i < movies.length + 1; i++) {
+  for (var i = 1; i <= movies.length; i++) {
       const url = movies[i].posterPath;
       posterId = movies[i].id;
       x[i] = `poster${posterId}`;
@@ -129,8 +131,7 @@ const renderMovies = function(movies) {
   $.getJSON('/movies')
     .done((movies) => {
       // movieStorageObjectArray = movies;
-      console.log(movies[0].id);
-      console.log(movies[0].title);
+
       renderMovies(movies);
 
 
