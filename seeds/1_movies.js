@@ -11,7 +11,7 @@ exports.seed = function(knex) {
         year: '1980',
         poster_path: 'http://ia.media-imdb.com/images/M/MV5BODMxMjE3NTA4Ml5BMl5BanBnXkFtZTgwNDc0NTIxMDE@._V1_SX300.jpg',
         synopsis: "Jack Torrance accepts a caretaker job at the Overlook Hotel, where he, along with his wife Wendy and their son Danny, must live isolated from the rest of the world for the winter. But they aren't prepared for the…",
-        // trailer_url: 'https://students-gschool-production.s3.amazonaws.com/uploads/asset/file/284/javascript_the_good_parts.jpg',
+        trailer_url: 'https://www.youtube.com/embed/HEew7zvpAWE?origin=http://example.com',
         created_at: new Date('2016-06-26 14:26:16 UTC'),
         updated_at: new Date('2016-06-26 14:26:16 UTC')
       }, {
@@ -21,7 +21,7 @@ exports.seed = function(knex) {
         year: '1976',
         poster_path: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMjEzNzYzNTc3Nl5BMl5BanBnXkFtZTgwMDUwNTkyMTE@._V1_SX300.jpg',
         synopsis: "A family moves into an old, haunted house that regenerates itself by feeding off of the life forces of its injured occupants.",
-        // trailer_url: 'https://students-gschool-production.s3.amazonaws.com/uploads/asset/file/287/learning_react_native.jpg',
+        trailer_url: 'https://www.youtube.com/embed/Oo_6Fb5k2lo?origin=http://example.com',
         created_at: new Date('2016-06-26 14:26:17 UTC'),
         updated_at: new Date('2016-06-26 14:26:17 UTC')
       }, {
@@ -51,7 +51,7 @@ exports.seed = function(knex) {
         year: '1973',
         poster_path: 'https://images-na.ssl-images-amazon.com/images/M/MV5BYzczOGRlMzQtNDAzMS00MjdlLTk5Y2QtNTM3MDE3NjRkYzQwXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg',
         synopsis: 'When a teenage girl is possessed by a mysterious entity, her mother seeks the help of two priests to save her daughter.',
-        // trailer_url: 'https://students-gschool-production.s3.amazonaws.com/uploads/asset/file/295/javascript_design_patterns.jpg',
+        trailer_url: 'https://www.youtube.com/embed/YDGw1MTEe9k?origin=http://example.com',
         created_at: new Date('2016-06-26 14:26:20 UTC'),
         updated_at: new Date('2016-06-26 14:26:20 UTC')
       }, {
@@ -141,7 +141,7 @@ exports.seed = function(knex) {
         year: '1978',
         poster_path: 'http://ia.media-imdb.com/images/M/MV5BNzk1OGU2NmMtNTdhZC00NjdlLWE5YTMtZTQ0MGExZTQzOGQyXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg',
         synopsis: 'On Halloween night of 1963, six-year-old Michael Myers stabbed his sister to death. After sitting in a mental hospital for 15 years, Myers escapes and returns to Haddonfield to kill.',
-        // trailer_url: 'http://akamaicovers.oreilly.com/images/0636920032977/lrg.jpg',
+        trailer_url: 'https://www.youtube.com/embed/DLEk6hES03Q?origin=http://example.com',
         created_at: new Date('2016-06-26 14:26:29 UTC'),
         updated_at: new Date('2016-06-26 14:26:29 UTC')
       }, {
@@ -151,7 +151,7 @@ exports.seed = function(knex) {
         year: '1968',
         poster_path: 'https://images-na.ssl-images-amazon.com/images/M/MV5BMjE3NzE4NzkyNl5BMl5BanBnXkFtZTgwNTYyODgwNzE@._V1_SX300.jpg',
         synopsis: 'A young couple move into an apartment, only to be surrounded by peculiar neighbors and occurrences. When the wife becomes mysteriously pregnant, paranoia over the safety of her unborn child begins to control her life.',
-        // trailer_url: 'http://akamaicovers.oreilly.com/images/0636920032977/lrg.jpg',
+        trailer_url: 'https://www.youtube.com/embed/PewtQsgN5uo?origin=http://example.com',
         created_at: new Date('2016-06-26 14:26:30 UTC'),
         updated_at: new Date('2016-06-26 14:26:30 UTC')
       }, {
@@ -221,7 +221,7 @@ exports.seed = function(knex) {
         year: '1980',
         poster_path: 'https://images-na.ssl-images-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg',
         synopsis: "A group of camp counselors is stalked and murdered by an unknown assailant while trying to reopen a summer camp which, years before, was the site of a child's drowning.",
-        // trailer_url: 'http://akamaicovers.oreilly.com/images/0636920032977/lrg.jpg',
+        trailer_url: 'https://www.youtube.com/embed/WCO4v-pFBns?origin=http://example.com',
         created_at: new Date('2016-06-26 14:26:37 UTC'),
         updated_at: new Date('2016-06-26 14:26:37 UTC')
       }, {
@@ -231,7 +231,7 @@ exports.seed = function(knex) {
         year: '1974',
         poster_path: 'https://images-na.ssl-images-amazon.com/images/M/MV5BZDI3OWE0ZWMtNGJjOS00N2E4LWFiOTAtZjQ4OTNiNzIwN2NkXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_UX182_CR0,0,182,268_AL_.jpg',
         synopsis: "Two siblings visit their grandfather's grave in Texas along with three of their friends and are attacked by a family of cannibalistic psychopaths.",
-        // trailer_url: 'http://akamaicovers.oreilly.com/images/0636920032977/lrg.jpg',
+        trailer_url: 'https://www.youtube.com/embed/eY4ldz615FA?origin=http://example.com',
         created_at: new Date('2016-06-26 14:26:38 UTC'),
         updated_at: new Date('2016-06-26 14:26:38 UTC')
       }, {
@@ -241,7 +241,7 @@ exports.seed = function(knex) {
         year: '1988',
         poster_path: 'http://ia.media-imdb.com/images/M/MV5BMTUyNDU3MDI5OV5BMl5BanBnXkFtZTYwNDQwNDk4._V1_SX300.jpg',
         synopsis: "Scottish archaeologist Angus Flint discovers an odd skull amid the ruins of a convent that he is excavating. Shortly thereafter, Lady Sylvia Marsh returns to Temple House, a nearby mansion, far earlier than expected. At a party in the village, Angus meets Lord James D'Ampton, who has just inherited his family's land right next to Temple House. Angus learns of the D'Ampton Worm, a huge dragon-snake that an earlier D'Ampton killed by cutting it in half. (There's a pretty catchy rock-folk song that tells the D'Ampton Worm legend.) As people begin disappearing and acting strangely over the next few days, the skull is stolen from Angus's room, and the watch of a missing person is found in a cavern that was the legendary home of the D'Ampton worm. Angus and James discover that there was an ancient cult that worshiped the worm as a god, and they theorize that the creature somehow survived its destruction, but it was trapped inside the cavern. The remainder of the movie shows Angus, James, and Mary Trent attempting to stop Lady Marsh from freeing the creature....",
-        // trailer_url: 'http://akamaicovers.oreilly.com/images/0636920032977/lrg.jpg',
+        trailer_url: 'https://www.youtube.com/embed/TRdjfhCHG70?origin=http://example.com',
         created_at: new Date('2016-06-26 14:26:39 UTC'),
         updated_at: new Date('2016-06-26 14:26:39 UTC')
       }, {
@@ -261,7 +261,7 @@ exports.seed = function(knex) {
         year: '2002',
         poster_path: 'https://images-na.ssl-images-amazon.com/images/M/MV5BNDA2NTg2NjE4Ml5BMl5BanBnXkFtZTYwMjYxMDg5._V1_SX300.jpg',
         synopsis: 'A journalist must investigate a mysterious videotape which seems to cause the death of anyone in a week of viewing it.',
-        // trailer_url: 'http://akamaicovers.oreilly.com/images/0636920032977/lrg.jpg',
+        trailer_url: 'https://www.youtube.com/embed/yzR2GY-ew8I?origin=http://example.com',
         created_at: new Date('2016-06-26 14:26:41 UTC'),
         updated_at: new Date('2016-06-26 14:26:41 UTC')
       }, {

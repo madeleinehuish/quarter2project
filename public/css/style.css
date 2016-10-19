@@ -43,6 +43,9 @@
   margin-right: 20px;
   margin-left: 10px;
 }
+a.sitename {
+  float: left;
+}
 a.sitename, a:visited.sitename {
   color: #e0e0e0;
 }
