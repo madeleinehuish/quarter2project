@@ -59,7 +59,7 @@
           .attr('href', '/login.html')
           .text('Log in');
 
-        $firstNavItems.append($signup);
+        // $firstNavItems.append($signup);
         // $secondNavItems.append($login);
       }
     })
