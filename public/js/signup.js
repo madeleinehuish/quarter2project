@@ -50,9 +50,25 @@
 
     $.ajax(settings)
       .done(() => {
-        console.log('yo');
-        window.location.href = '/main.html';
-        //maybe we change to a different landing page?
+        const settings = {
+          contentType: 'application/json',
+          data: JSON.stringify({ email, password }),
+          dataType: 'json',
+          type: 'POST',
+          url: '/token'
+        };
+
+        $.ajax(settings)
+          .done((user) => {
+            console.log(user);
+            sessionStorage.setItem('userId', user.id);
+            console.log(user.id);
+            window.location.href = '/main.html';
+          })
+          .fail(($xhr) => {
+    				alert($xhr.responseText, 3000);
+            // Materialize.toast($xhr.responseText, 3000);
+          });
       })
       .fail(($xhr) => {
         console.log('fail');
