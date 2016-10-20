@@ -1,6 +1,6 @@
 /* NAVIGATION */
 .fixed-nav-bar {
-  font-family: 'Pirata One', cursive;
+  font-family: 'Kratos TrueType.ttf', cursive;
   font-size: 2em;
   position: fixed;
   top: 0;
@@ -9,8 +9,12 @@
   z-index: 9999;
   width: 100%;
   height: 50px;
-  background-color: #11292c;
+  background-color: #111111;
+  /*background-color: #11292c;*/
+
 }
+
+
 
 /* The element at the top of the page right after the fixed navigation bar
    MUST have sufficient top margin or else it will be covered by the bar */
@@ -39,9 +43,13 @@
   float: right;
 }
 .sitename {
+  font-family: 'Kratos TrueType.ttf', cursive;
+  /*font-size: 2em;*/
   display: inline-block;
   margin-right: 20px;
-  margin-left: 10px;
+  margin-left: -170px;
+  margin-top: 20px;
+  color:#aaa;
 }
 a.sitename {
   float: left;
@@ -132,3 +140,17 @@ body {
 container-fluid {
 	width: 100%;
 }
+
+/*fonts*/
+@font-face {
+    font-family: 'MB-Demonic_Tale.ttf';
+    src: url('/font/MB-Demonic_Tale.ttf');
+}
+
+@font-face {
+    font-family: 'Kratos TrueType.ttf';
+    src: url('/font/Kratos TrueType.ttf');
+}
+/*body {
+    font-family: 'MB-Demonic_Tale.tff', Verdana, Tahoma;
+}*/
