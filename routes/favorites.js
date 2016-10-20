@@ -54,20 +54,24 @@ router.get('/favorites/check', (req, res, next) => {
 
 router.post('/favorites', (req, res, next) => {
   const movieId = Number.parseInt(req.body.movieId);
+  const userId = Number.parseInt(req.body.userId);
 
     if (!Number.isInteger(movieId)) {
       return next(boom.create(400, 'Movie ID must be an integer'));
     }
 
     knex('movies')
+    // .where('id', movieId)
     .where('id', movieId)
+
     .first()
     .then((movie) => {
       if (!movie) {
         throw boom.create(404, 'Movie not found')
       }
 
-      const insertFavorite = {movieId: movieId, userId: userId};
+      const insertFavorite = {movieId, userId: userId};
+      // const insertFavorite = { bookId, userId: req.token.userId };
 
       return knex('favorites')
       .insert(decamelizeKeys(insertFavorite), '*');
@@ -83,6 +87,7 @@ router.post('/favorites', (req, res, next) => {
 
 router.delete('/favorites', (req, res, next) => {
   const movieId = Number.parseInt(req.body.movieId);
+  const userId = Number.parseInt(req.body.userId);
 
   if (!Number.isInteger(movieId)) {
     return next(boom.create(400, 'Movie ID must be an integer'));

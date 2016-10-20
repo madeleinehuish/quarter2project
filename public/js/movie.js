@@ -1,6 +1,7 @@
 (function() {
   'use strict';
-
+  const movId = sessionStorage.getItem('movieId');
+  const usId = sessionStorage.getItem('userId');
   const renderMovie = function(movie) {
     $('#movie-title-moviespage').text(movie.title);
     $('#movie-director-moviespage').text(movie.director);
@@ -19,10 +20,10 @@
 
   $('#addFavorite').click((event) => {
       event.preventDefault();
-
+      console.log(movId);
       const options = {
         contentType: 'application/json',
-        data: JSON.stringify({ movieId: movie.id }),
+        data: JSON.stringify({ movieId: movId, userId: usId }),
         dataType: 'json',
         type: 'POST',
         url: '/favorites'
@@ -30,10 +31,7 @@
 
       $.ajax(options)
         .done(() => {
-          $('#addFavorite').addClass('hide');
-          $('#removeFavorite').removeClass('hide');
-          alert('Added book to your favorites');
-          // Materialize.toast('Added book to your favorites', 3000);
+          alert('added a book to favorites');
         })
         .fail(() => {
           alert('Unable to add this book to your favorites')
@@ -46,7 +44,7 @@
 
       const options = {
         contentType: 'application/json',
-        data: JSON.stringify({ movieId: movie.id }),
+        data: JSON.stringify({ movieId: movId, userId: usId }),
         dataType: 'json',
         type: 'DELETE',
         url: '/favorites'
@@ -54,16 +52,17 @@
 
       $.ajax(options)
         .done(() => {
-          $('#removeFavorite').addClass('hide');
-          $('#addFavorite').removeClass('hide');
-
-          Materialize.toast('Removed book from your favorites', 3000);
+          // $('#removeFavorite').addClass('hide');
+          // $('#addFavorite').removeClass('hide');
+          alert('removed a book from your favorites');
+          // Materialize.toast('Removed book from your favorites', 3000);
         })
         .fail(() => {
-          Materialize.toast(
-            'Unable to remove this book from your favorites',
-            3000
-          );
+          alert('unable to remove a book from your favorites');
+          // Materialize.toast(
+          //   'Unable to remove this book from your favorites',
+          //   3000
+          // );
         });
     });
 
@@ -99,7 +98,7 @@
         });
     });
 
-  const movId = sessionStorage.getItem('movieId');
+
 
   $.getJSON(`/movies/${movId}`)
     .done((movie) => {

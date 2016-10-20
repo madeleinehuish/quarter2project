@@ -28,12 +28,11 @@ if (window.location.pathname === '/main.html') {
 
 $.getJSON(path)
   .done((movies) => {
-    // movieStorageObjectArray = movies;
 
     renderMovies(movies);
 
   })
   .fail(() => {
-    // Materialize.toast('Unable to retrieve movies', 3000);
+    
     alert('Unable to retrieve movies');
   });
