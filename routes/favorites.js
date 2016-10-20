@@ -9,11 +9,11 @@ const { camelizeKeys, decamelizeKeys } = require('humps');
 const router = express.Router();
 
 
-router.get('/favorites', (req,res,next) => {
+router.get('/favorites/:id', (req,res,next) => {
   knex('favorites')
   .innerJoin('movies', 'movies.id',
    'favorites.movie_id')
-  .where('favorites.user_id', 1)
+  .where('favorites.user_id', req.params.id)
   .orderBy('movies.title', 'ASC')
   .then((rows) => {
     const favorites = camelizeKeys(rows);

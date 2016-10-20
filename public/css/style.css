@@ -49,6 +49,9 @@ a.sitename {
 a.sitename, a:visited.sitename {
   color: #e0e0e0;
 }
+.siteText {
+  color: #e0e0e0;
+}
 .menu-items li {
   display: inline-block;
   /*margin-right: 10px;*/
@@ -106,7 +109,7 @@ a.sitename, a:visited.sitename {
   .hide {
     display: none;
   }
-  
+
   #menu:target .show {
     display: none;
   }

@@ -23,7 +23,7 @@ let path;
 if (window.location.pathname === '/main.html') {
   path = '/movies';
 } else {
-  path = '/favorites';
+  path = `/favorites/${sessionStorage.getItem('userId')}`;
 }
 
 $.getJSON(path)
