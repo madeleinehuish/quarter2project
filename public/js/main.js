@@ -5,12 +5,6 @@ $(document).ready(function () {
       if (!loggedIn) {
         window.location.href = '/index.html';
       }
-  //Movie Linking to movies page on click
-      // $('.toMoviePage').click(function(event) {
-      //   const pressedMovieId = event.target.id.substring('poster'.length);
-      //   sessionStorage.setItem('movieId', pressedMovieId);
-      //   window.location.href = `/movies.html?id=${pressedMovieId}`;
-      // })
 
   // Carousel
       let displacement = 0;
@@ -63,19 +57,17 @@ const renderTrailers = function(movies) {
 
 $.getJSON('/movies')
   .done((movies) => {
-    // movieStorageObjectArray = movies;
 
-    // renderMovies(movies);
     renderTrailers(movies);
 
   })
   .fail(() => {
-    // Materialize.toast('Unable to retrieve movies', 3000);
+
     alert('Unable to retrieve movies');
   })
 
 .fail(() => {
-  // Materialize.toast('Unable to retrieve movies', 3000);
+
   alert('Unable to retrieve movies');
 });
 })
