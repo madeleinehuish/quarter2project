@@ -1,20 +1,30 @@
 /* NAVIGATION */
 .fixed-nav-bar {
-  font-family: 'Kratos TrueType.ttf', cursive;
+  font-family: 'StraightToHellBB.ttf', cursive;
   font-size: 2em;
+
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 9999;
   width: 100%;
-  height: 50px;
-  background-color: #111111;
+  height: 70px;
+  background-color: #1d1d1d;
+  padding-top:10px;
   /*background-color: #11292c;*/
 
 }
 
+body {
+font-family: 'StraightToHellBB.ttf', cursive;
+color: #aaa;
+}
 
+.menu-items a {
+  padding-left:10px;
+  padding-right:10px;
+}
 
 /* The element at the top of the page right after the fixed navigation bar
    MUST have sufficient top margin or else it will be covered by the bar */
@@ -41,14 +51,17 @@
 .menu-items {
   display: inline-block;
   float: right;
+  text-shadow: 1px 1px #e50000;
+
 }
 .sitename {
-  font-family: 'Kratos TrueType.ttf', cursive;
-  /*font-size: 2em;*/
+  font-family: 'StraightToHellSinnerBB.ttf', cursive;
+  /*font-size: .5em;*/
   display: inline-block;
   margin-right: 20px;
   margin-left: -170px;
-  margin-top: 20px;
+  text-shadow: 2px 2px #e50000;
+  /*margin-top: 20px;*/
   color:#aaa;
 }
 a.sitename {
@@ -85,6 +98,7 @@ a.sitename, a:visited.sitename {
 .toGrey {
   color: #d3d3d3;
 }
+
 @media only screen and (max-width: 800px) {
   .menu {
     position: relative;
@@ -143,13 +157,13 @@ container-fluid {
 
 /*fonts*/
 @font-face {
-    font-family: 'MB-Demonic_Tale.ttf';
-    src: url('/font/MB-Demonic_Tale.ttf');
+    font-family: 'StraightToHellBB.ttf';
+    src: url('/font/StraightToHellBB.ttf');
 }
 
 @font-face {
-    font-family: 'Kratos TrueType.ttf';
-    src: url('/font/Kratos TrueType.ttf');
+    font-family: 'StraightToHellSinnerBB.ttf';
+    src: url('/font/StraightToHellSinnerBB.ttf');
 }
 /*body {
     font-family: 'MB-Demonic_Tale.tff', Verdana, Tahoma;
