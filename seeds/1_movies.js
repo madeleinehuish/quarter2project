@@ -59,7 +59,7 @@ exports.seed = function(knex) {
         title: 'Videodrome',
         director: 'David Cronenberg',
         year: '1983',
-        poster_path: 'http://wrongsideoftheart.com/wp-content/gallery/posters-v/videodrome_poster_01.jpg',
+        poster_path: 'http://www.impawards.com/1983/posters/videodrome.jpg',
         synopsis: 'A sleazy cable-TV programmer begins to see his life and the future of media spin out of control in a very unusual fashion when he acquires a new kind of programming for his station.',
         // trailer_url: 'https://students-gschool-production.s3.amazonaws.com/uploads/asset/file/296/javascript_with_promises.jpg',
         created_at: new Date('2016-06-26 14:26:21 UTC'),
