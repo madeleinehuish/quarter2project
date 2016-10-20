@@ -6,11 +6,11 @@ $(document).ready(function () {
         window.location.href = '/index.html';
       }
   //Movie Linking to movies page on click
-      $('.toMoviePage').click(function(event) {
-        const pressedMovieId = event.target.id.substring('poster'.length);
-        sessionStorage.setItem('movieId', pressedMovieId);
-        window.location.href = `/movies.html?id=${pressedMovieId}`;
-      })
+      // $('.toMoviePage').click(function(event) {
+      //   const pressedMovieId = event.target.id.substring('poster'.length);
+      //   sessionStorage.setItem('movieId', pressedMovieId);
+      //   window.location.href = `/movies.html?id=${pressedMovieId}`;
+      // })
 
   // Carousel
       let displacement = 0;
