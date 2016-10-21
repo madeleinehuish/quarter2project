@@ -8,15 +8,16 @@ body {
 
 /* index.html tv art video */
 div.container-fluid {
-  margin: auto;
-  display: inline-flex;
 }
 
 div#tv_container{
+  top: 10px;
   margin: auto;
-  display: inline;
+
 }
-img {
-  display: inline;
+div#tv_container img {
+  display:block;
   margin: auto;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 5px #222);
 }
