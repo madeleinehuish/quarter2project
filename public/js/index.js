@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-// $('.scream').click(function() {
   var obj = document.createElement("audio");
         obj.src="assets/jlcurtis-scream.mp3";
         obj.volume=0.50;
@@ -9,7 +8,5 @@ $(document).ready(function () {
         $(".scream").click(function() {
             obj.play();
         });
-  // new Audio('assets/scream.mp3').play();          //play corresponding audio
-// });
 
 })
