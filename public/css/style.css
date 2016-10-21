@@ -204,9 +204,6 @@ input[type=password]:focus, textarea:focus {
 .dropdown-menu {
   background-color: #707070;
 }
-/*.scream {
+.scream {
   cursor: pointer;
-}*/
-/*body {
-    font-family: 'MB-Demonic_Tale.tff', Verdana, Tahoma;
-}*/
+}
