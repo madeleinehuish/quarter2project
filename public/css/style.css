@@ -66,6 +66,7 @@ color: #aaa;
 }
 a.sitename {
   float: left;
+  text-decoration: none;
 }
 a.sitename, a:visited.sitename {
   color: #e0e0e0;
@@ -132,6 +133,7 @@ a.sitename, a:visited.sitename {
     display: none;
   }
 
+
   #menu:target .show {
     display: none;
   }
@@ -165,6 +167,40 @@ container-fluid {
     font-family: 'StraightToHellSinnerBB.ttf';
     src: url('/font/StraightToHellSinnerBB.ttf');
 }
+
+input[type=text], textarea {
+  @include transition(all 0.30s ease-in-out);
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #DDDDDD;
+}
+
+input[type=text]:focus, textarea:focus {
+  @include box-shadow(0 0 5px rgba(229, 0, 0, 1));
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgba(229, 0, 0, 1);
+}
+
+input[type=password], textarea {
+  @include transition(all 0.30s ease-in-out);
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #DDDDDD;
+}
+
+input[type=password]:focus, textarea:focus {
+  @include box-shadow(0 0 5px rgba(229, 0, 0, 1));
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgba(229, 0, 0, 1);
+}
+.dropdown-menu {
+  background-color: #707070;
+}
+
 /*body {
     font-family: 'MB-Demonic_Tale.tff', Verdana, Tahoma;
 }*/
