@@ -1,0 +1,215 @@
+* {
+  cursor: url('/assets/skeletonhandcursor.cur'), auto;
+}
+
+/* NAVIGATION */
+.fixed-nav-bar {
+  font-family: 'StraightToHellBB.ttf', cursive;
+  font-size: 2em
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 70px;
+  background-color: #1d1d1d;
+  padding-top:10px;
+  /*background-color: #11292c;*/
+
+}
+
+body {
+font-family: 'StraightToHellBB.ttf', cursive;
+color: #aaa;
+}
+
+.menu-items a {
+  padding-left:10px;
+  padding-right:10px;
+}
+
+/* The element at the top of the page right after the fixed navigation bar
+   MUST have sufficient top margin or else it will be covered by the bar */
+.container {
+  margin-top: 100px;
+}
+
+/* Example responsive navigation menu  */
+.fixed-nav-bar li, .fixed-nav-bar a {
+  height: 50px;
+  line-height: 50px;
+}
+.menu {
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.menu a, .menu a:visited {
+  color: #aaaaaa;
+}
+.menu a:hover, .menu a:target {
+  color: #ebebeb;
+}
+.menu-items {
+  display: inline-block;
+  float: right;
+  text-shadow: 1px 1px #e50000;
+
+}
+.sitename {
+  font-family: 'StraightToHellSinnerBB.ttf', cursive;
+  display: inline-block;
+  margin-right: 20px;
+  margin-left: -170px;
+  text-shadow: 2px 2px #e50000;
+  /*margin-top: 20px;*/
+  color:#aaa;
+}
+a.sitename {
+  float: left;
+  text-decoration: none;
+}
+a.sitename, a:visited.sitename {
+  color: #e0e0e0;
+}
+.siteText {
+  color: #e0e0e0;
+}
+.menu-items li {
+  display: inline-block;
+  /*margin-right: 10px;*/
+  /*margin-left: 10px;*/
+}
+.menu-items a {
+  text-decoration: none;
+}
+.show, .hide {
+  display: none;
+  padding-left: 15px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center left;
+  color: #dde1e2;
+}
+.show {
+  background-image: url(assets/down-arrow-icon.png);
+}
+.hide {
+  background-image: url(assets/up-arrow-icon.png);
+}
+.toGrey {
+  color: #d3d3d3;
+}
+
+@media only screen and (max-width: 800px) {
+  .menu {
+    position: relative;
+    width: 100%;
+  }
+  .sitename {
+    position: absolute;
+    top: 0;
+    left: 15px;
+    margin-left: 0px;
+  }
+  .menu-items {
+    display: none;
+    width: 100%;
+    margin-top: 50px;
+    background-color: #ffffff;
+  }
+  .menu-items li {
+    display: block;
+    text-align: center;
+  }
+  .show, .hide {
+    position: absolute;
+    top: 0;
+    right: 15px;
+  }
+  .show {
+    display: inline-block;
+  }
+  .hide {
+    display: none;
+  }
+
+  #menu:target .show {
+    display: none;
+  }
+  #menu:target .hide, #menu:target .menu-items {
+    display: inline-block;
+  }
+}
+/* NAV Responsive  Settings*/
+@media only screen and (max-width: 220px) {
+  .sitename, .show, .hide {
+    font-size: 14px;
+  }
+}
+
+
+/* index.html body */
+body {
+  background-color: #111111;
+}
+container-fluid {
+	width: 100%;
+}
+
+/*fonts*/
+@font-face {
+    font-family: 'StraightToHellBB.ttf';
+    src: url('/font/StraightToHellBB.ttf');
+}
+
+@font-face {
+    font-family: 'StraightToHellSinnerBB.ttf';
+    src: url('/font/StraightToHellSinnerBB.ttf');
+}
+/*body {
+    font-family: 'MB-Demonic_Tale.tff', Verdana, Tahoma;
+}*/
+
+/*box glow effects*/
+/*@import "compass/css3";*/
+
+input[type=text], textarea {
+  @include transition(all 0.30s ease-in-out);
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #DDDDDD;
+}
+
+input[type=text]:focus, textarea:focus {
+  @include box-shadow(0 0 5px rgba(229, 0, 0, 1));
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgba(229, 0, 0, 1);
+}
+
+input[type=password], textarea {
+  @include transition(all 0.30s ease-in-out);
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #DDDDDD;
+}
+
+input[type=password]:focus, textarea:focus {
+  @include box-shadow(0 0 5px rgba(229, 0, 0, 1));
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgba(229, 0, 0, 1);
+}
+
+/*label {
+  width: 150px;
+  float: left;
+}*/
+
+/*body {
+  padding: 20px;
+}*/
