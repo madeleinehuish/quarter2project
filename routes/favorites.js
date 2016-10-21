@@ -61,7 +61,6 @@ router.post('/favorites', (req, res, next) => {
     }
 
     knex('movies')
-    // .where('id', movieId)
     .where('id', movieId)
 
     .first()
@@ -72,7 +71,7 @@ router.post('/favorites', (req, res, next) => {
 
       const insertFavorite = {movieId, userId: userId};
       // const insertFavorite = { bookId, userId: req.token.userId };
-
+    
       return knex('favorites')
       .insert(decamelizeKeys(insertFavorite), '*');
     })

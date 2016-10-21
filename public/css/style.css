@@ -1,3 +1,7 @@
+* {
+  cursor: url('/assets/skeletonhandcursor.cur'), auto;
+}
+
 /* NAVIGATION */
 .fixed-nav-bar {
   font-family: 'StraightToHellBB.ttf', cursive;
@@ -200,9 +204,9 @@ input[type=password]:focus, textarea:focus {
 .dropdown-menu {
   background-color: #707070;
 }
-.scream {
+/*.scream {
   cursor: pointer;
-}
+}*/
 /*body {
     font-family: 'MB-Demonic_Tale.tff', Verdana, Tahoma;
 }*/
