@@ -9,7 +9,7 @@ $(document).ready(function () {
   // Carousel
       let displacement = 0;
       $('.left').click(function() {
-        displace(-250);
+        displace(250);
       });
 
       $('.right').click(function() {
