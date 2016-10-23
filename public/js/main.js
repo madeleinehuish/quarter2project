@@ -27,7 +27,7 @@ $(document).ready(function () {
         displacement += amount;
         $('.inside-row').css('transform', `translate3d(${displacement}px, 0, 0)`);
       }
-      
+
  //end carousel
 
 
@@ -43,7 +43,6 @@ const renderTrailers = function(movies) {
 
               $slide.appendTo($(".inside-row"));
             }
-
           }
 
         $('.trailer').click(function(event) {

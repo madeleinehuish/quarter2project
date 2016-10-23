@@ -10,7 +10,7 @@ const renderMovies = function(movies) {
 
       posterId = movies[i].id;
       x[i] = `poster${posterId}`;
-      const $movieBox = $(`<div class="item"></div><div id="hover" class="box-item "><div  class="transform-item  col-lg-2 col-md-2 col-sm-4 col-xs-4"><img class="movie-poster" src="${url}"/><div id="${x[i]}" class="overlay-item toMoviePage"></div></div></div>`);
+      const $movieBox = $(`<div class="item"></div><div id="hover" class="box-item "><div  class="transform-item col-lg-2 col-md-2 col-sm-6 col-xs-12"><img class="movie-poster" src="${url}"/><div id="${x[i]}" class="overlay-item toMoviePage"></div></div></div>`);
 
       $movieBox.appendTo($(".posters"));
   }
@@ -33,6 +33,6 @@ $.getJSON(path)
 
   })
   .fail(() => {
-    
+
     alert('Unable to retrieve movies');
   });
