@@ -8,6 +8,12 @@
   background-color: #333333;
 }
 
+#viewscreen-sm {
+  visibility: collapse;
+  width: 0;
+  height: 0;
+}
+
 .row {
 	overflow: hidden;
 	width: 100%;
@@ -137,11 +143,58 @@ i.fa-chevron-circle-left:hover {
   opacity: 1;
 }
 
-/*@media all and (max-width: 980px) and (min-width: 280px) {*/
-  /*#viewscreen {
+
+@media all and (max-width: 700px) and (min-width: 1px) {
+  div#viewscreen {
+    visibility: collapse;
+    width: 0;
+    height: 0;
+  }
+
+  #viewscreen-sm {
+    visibility: visible;
     margin: auto;
-    margin-top: 7%;
+    margin-top: 15%;
     width: 320px;
-    height: 180px;
+    height: 170px;
     background-color: #333333;
-  }*/
+  }
+
+  i.fa-chevron-circle-left {
+    font-size: 5vw;
+    color: white;
+    position: absolute;
+    left: 20px;
+    top: 300px;
+    opacity: .5;
+    z-index: 2;
+    -webkit-transition: -webkit-transform .2s ease-out 0s;
+    -moz-transition: -moz-transform .2s ease-out 0s;
+    -o-transition: -o-transform .2s ease-out 0s;
+    transition: transform .2s ease-out 0s;
+  }
+
+  i.fa-chevron-circle-right {
+    font-size: 5vw;
+    color: white;
+    position: absolute;
+    right: 20px;
+    top: 300px;
+    opacity: .5;
+    z-index: 2;
+    -webkit-transition: -webkit-transform .2s ease-out 0s;
+    -moz-transition: -moz-transform .2s ease-out 0s;
+    -o-transition: -o-transform .2s ease-out 0s;
+    transition: transform .2s ease-out 0s;
+  }
+
+  .trailer:hover ~ .trailer {
+  	transform: translate3d(75px, 0, 0);
+  }
+
+  .inside-row:hover .trailer:hover {
+    margin-right: auto;
+  	transform: scale(1.25);
+  	opacity: 1;
+  }
+}
