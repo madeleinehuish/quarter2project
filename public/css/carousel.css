@@ -2,7 +2,7 @@
 
 #viewscreen {
   margin: auto;
-  margin-top: 7%;
+  margin-top: 10%;
   width: 640px;
   height: 360px;
   background-color: #333333;
@@ -13,7 +13,7 @@
 	width: 100%;
 }
 
-.row__inner {
+.inside-row {
 	transition: 450ms transform;
 	font-size: 0;
 	white-space: nowrap;
@@ -21,39 +21,43 @@
 	padding-bottom: 10px;
 }
 
-.tile {
+.inside-row:hover {
+	transform: translate3d(-125px, 100, 0);
+}
+
+.inside-row:hover .trailer {
+	opacity: 0.3;
+}
+
+.inside-row:hover .trailer:hover {
+	transform: scale(2);
+	opacity: 1;
+}
+
+.trailer {
 	position: relative;
 	display: inline-block;
 	width: 250px;
 	height: 140.625px;
 	margin-right: 10px;
-	font-size: 20px;
 	cursor: pointer;
 	transition: 450ms all;
 	transform-origin: center left;
 }
 
-.tile__img {
-	width: 250px;
-	height: 140.625px;
-	object-fit: cover;
-}
-
-
-/*Disable to play trailers inline*/
-.tile__details {
+/*Disable to play trailers in slider*/
+.trailer-box {
 	position: absolute;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	top: 0;
-	font-size: 10px;
 	opacity: 0;
 	background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
 	transition: 450ms opacity;
 }
 
-.tile__details:after {
+.trailer-box:after {
 	margin-top: -25px;
 	margin-left: -25px;
 	width: 50px;
@@ -65,33 +69,26 @@
 	z-index: 1;
 }
 
-.tile:hover .tile__details {
+.trailer:hover .trailer-box {
 	opacity: 1;
 }
-.tile__title {
-	position: absolute;
-	bottom: 0;
-	padding: 10px;
+
+.trailer-image {
+	width: 250px;
+	height: 140.625px;
+	object-fit: cover;
 }
-.row__inner:hover {
-	transform: translate3d(-125px, 100, 0);
-}
-.row__inner:hover .tile {
-	opacity: 0.3;
-}
-.row__inner:hover .tile:hover {
-	transform: scale(2);
-	opacity: 1;
-}
-.tile:hover ~ .tile {
+
+.trailer:hover ~ .trailer {
 	transform: translate3d(250px, 0, 0);
 }
 
 /* Slider */
-.slider .sliderMask .sliderContent {
+.trailer-slider .mask .slide-content {
     white-space: nowrap;
 }
-.slider .sliderMask .sliderContent .item {
+
+.trailer-slider .mask .slide-content .item {
     z-index: 1;
     display: inline-block;
     position: relative;
@@ -99,7 +96,7 @@
     vertical-align: top;
 }
 
-.slider {
+.trailer-slider {
   width: 95vw;
   overflow-x: visible;
   margin: 0 1vw;
@@ -140,7 +137,7 @@ i.fa-chevron-circle-left:hover {
   opacity: 1;
 }
 
-@media all and (max-width: 980px) and (min-width: 280px) {
+/*@media all and (max-width: 980px) and (min-width: 280px) {*/
   /*#viewscreen {
     margin: auto;
     margin-top: 7%;

@@ -9,24 +9,25 @@ $(document).ready(function () {
   // Carousel
       let displacement = 0;
       $('.left').click(function() {
-        displace(250);
+        if (displacement <= -250){
+         displace(250);
+        }
       });
 
       $('.right').click(function() {
       console.log(displacement);
-      const numTiles = $('.tile').length;
+      const numTiles = $('.trailer').length;
       const maxDis = (numTiles - 6) * -250;
       if (displacement >= maxDis){
         displace(-250);
       }
     });
 
-
       function displace(amount) {
         displacement += amount;
-        $('.row__inner').css('transform', `translate3d(${displacement}px, 0, 0)`);
+        $('.inside-row').css('transform', `translate3d(${displacement}px, 0, 0)`);
       }
-
+      
  //end carousel
 
 
@@ -38,16 +39,16 @@ const renderTrailers = function(movies) {
 
               const url = movies[i].trailerUrl;
               const title = movies[i].title;
-              const $slide = $(`<div class="tile item"><div class="tile__media"><iframe class="tile__img" src="${url}" frameborder="0" allowfullscreen></iframe></div> <div class="tile__details"><div class="tile__title">${title}</div></div></div>`);
+              const $slide = $(`<div class="trailer item"><div class="tile__media"><iframe class="trailer-image" src="${url}" frameborder="0" allowfullscreen></iframe></div> <div class="trailer-box"><div class="trailer-title">${title}</div></div></div>`);
 
-              $slide.appendTo($(".row__inner"));
+              $slide.appendTo($(".inside-row"));
             }
 
           }
 
-        $('.tile').click(function(event) {
+        $('.trailer').click(function(event) {
 
-             const url = $(event.currentTarget).find('.tile__img').attr('src');
+             const url = $(event.currentTarget).find('.trailer-image').attr('src');
              const $iframe = $(`<iframe id="ytplayer" type="text/html" width="640" height="360" src="${url}" frameborder="0"/>`);
 
              $("#viewscreen").empty();
