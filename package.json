@@ -9,7 +9,8 @@
     "start": "nodemon server.js",
     "heroku-postbuild": "knex migrate:latest",
     "nf": "nf start",
-    "nodemon": "nodemon server.js"
+    "nodemon": "nodemon server.js",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -38,6 +39,8 @@
   },
   "devDependencies": {
     "dotenv": "^2.0.0",
+    "eslint": "^3.8.1",
+    "eslint-config-ryansobol": "^9.1.1",
     "foreman": "^2.0.0",
     "nodemon": "^1.11.0"
   },
