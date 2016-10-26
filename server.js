@@ -44,14 +44,12 @@ app.use(express.static(path.join('public')));
 const movies = require('./routes/movies');
 const users = require('./routes/users');
 const token = require('./routes/token');
-// const edit = require('./routes/edit');
 const favorites = require('./routes/favorites');
 const comments = require('./routes/comments');
 
 app.use(movies);
 app.use(users);
 app.use(token);
-// app.use(edit);
 app.use(favorites);
 app.use(comments);
 
@@ -68,11 +66,11 @@ app.use((err, _req, res, _next) => {
       .send(err.message);
   }
 
-  if(err.status) {
+  if (err.status) {
     return res
       .status(err.status)
       .set('Content-Type', 'text/plain')
-      .send(err.statusText)
+      .send(err.statusText);
   }
 
   // eslint-disable-next-line no-console

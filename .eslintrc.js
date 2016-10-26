@@ -9,6 +9,7 @@ module.exports = {
     'camelcase': 'off',
     'new-cap': 'off',
     'no-undef': 'off',
-    'no-alert': 'off'
+    'no-alert': 'off',
+    'prefer-arrow-callback': 'off'
   }
 };
