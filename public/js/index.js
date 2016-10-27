@@ -6,7 +6,7 @@
   obj.volume = 0.80;
   obj.autoPlay = false;
   obj.preLoad = true;
-  $('.scream').click(function() {
+  $('.scream').click(() => {
     obj.play();
   });
 })();

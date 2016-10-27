@@ -1,6 +1,6 @@
 'use strict';
-$(document).ready(function() {
-  $('.toMoviePage').click(function(event) {
+$(document).ready(() => {
+  $('.toMoviePage').click((event) => {
     const pressedMovieId = event.target.id.substring('poster'.length);
 
     sessionStorage.setItem('movieId', pressedMovieId);

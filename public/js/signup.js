@@ -23,7 +23,7 @@
     if (!password || password.length < 8) {
       alert('Password must be valid.');
     }
-    const settings = {
+    const createUserSettings = {
       contentType: 'application/json',
       data: JSON.stringify({ firstName, lastName, email, password }),
       dataType: 'json',
@@ -31,9 +31,9 @@
       url: '/users'
     };
 
-    $.ajax(settings)
+    $.ajax(createUserSettings)
       .done(() => {
-        const settings = {
+        const createTokenSettings = {
           contentType: 'application/json',
           data: JSON.stringify({ email, password }),
           dataType: 'json',
@@ -41,7 +41,7 @@
           url: '/token'
         };
 
-        $.ajax(settings)
+        $.ajax(createTokenSettings)
           .done((user) => {
             sessionStorage.setItem('userId', user.id);
             window.location.href = '/main.html';

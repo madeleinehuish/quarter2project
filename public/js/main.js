@@ -7,10 +7,11 @@ $(document).ready(function() {
       }
       let displacement = 0;
 
-      function displace(amount) {
+      const displace = function(amount) {
         displacement += amount;
         $('.inside-row').css('transform', `translate3d(${displacement}px, 0, 0)`);
-      }
+      };
+
       $('.left').click(function() {
         if (displacement <= -250) {
           displace(250);
@@ -25,7 +26,6 @@ $(document).ready(function() {
         }
       });
       const renderTrailers = function(movies) {
-
         for (let i = 0; i < movies.length; i++) {
           if (movies[i].trailerUrl) {
             const url = movies[i].trailerUrl;
@@ -35,6 +35,7 @@ $(document).ready(function() {
             $slide.appendTo($('.inside-row'));
           }
         }
+        
         $('.trailer').click(function(event) {
           const url = $(event.currentTarget).find('.trailer-image').attr('src');
           const $iframe = $(`<iframe id="ytplayer" type="text/html" width="640" height="360" src="${url}" frameborder="0"/>`);

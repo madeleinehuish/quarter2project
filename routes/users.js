@@ -41,7 +41,7 @@ router.get('/users', authorize, (req, res, next) => {
 
 
 router.post('/users', (req, res, next) => {
-  const { firstName, lastName, email, password } = req.body;
+  const { email, password } = req.body;
 
   if (!email || !email.trim()) {
     return next(boom.create(400, 'Email must not be blank'));
@@ -68,6 +68,7 @@ router.post('/users', (req, res, next) => {
     .then((hashedPassword) => {
       const { firstName, lastName } = req.body;
       const insertUser = { firstName, lastName, email, hashedPassword };
+
       return knex('users')
         .insert(decamelizeKeys(insertUser), '*');
     })
@@ -131,7 +132,9 @@ router.patch('/users/:id', (req, res, next) => {
 
       if (password) {
         if (password.length < 8) {
-          return next(boom.create(400, 'Password must be at least 8 characters long'));
+          const message = 'Password must be at least 8 characters long';
+
+          return next(boom.create(400, message));
         }
 
         return bcrypt.hash(password, 12)
@@ -166,7 +169,6 @@ router.patch('/users/:id', (req, res, next) => {
         expires: expiry,
         secure: router.get('env') === 'production'
       });
-      console.log('token is' + token);
       res.send(user);
     })
     .catch((err) => {

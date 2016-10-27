@@ -3,7 +3,12 @@
   $.getJSON('/token')
     .done((loggedIn) => {
       if (loggedIn) {
-        $.ajax('/users')
+        const userOptions = {
+          url: '/users',
+          type: 'GET',
+          dataType: 'json'
+        }
+        $.ajax(userOptions)
           .done((data) => {
             $('.firstNavItem').text(data.firstName);
             $('.secondNavItem').click((event) => {
