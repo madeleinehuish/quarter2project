@@ -26,6 +26,12 @@ else {
 $.getJSON(path)
   .done((movies) => {
     renderMovies(movies);
+    $('.toMoviePage').click((event) => {
+      const pressedMovieId = event.target.id.substring('poster'.length);
+
+      sessionStorage.setItem('movieId', pressedMovieId);
+      window.location.href = `/movies.html?id=${pressedMovieId}`;
+    });
   })
   .fail(() => {
     alert('Unable to retrieve movies');
