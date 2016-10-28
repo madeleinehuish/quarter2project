@@ -35,7 +35,7 @@ $(document).ready(function() {
             $slide.appendTo($('.inside-row'));
           }
         }
-        
+
         $('.trailer').click(function(event) {
           const url = $(event.currentTarget).find('.trailer-image').attr('src');
           const $iframe = $(`<iframe id="ytplayer" type="text/html" width="640" height="360" src="${url}" frameborder="0"/>`);
