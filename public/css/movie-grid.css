@@ -53,17 +53,20 @@ li.dropdown.firstNavItem {
 
 }
 
-@media all and (max-width: 879px) and (min-width: 667px) {
+
+@media all and (max-width: 2000px) and (min-width: 1275px) {
+  div#grid.container-fluid {
+    float: left;
+  }
   div.box-item {
-    width: 11.32%;
+    width: 10%;
     height: 300px;
-    /*box-sizing: border-box;*/
+    /*margin-left: 10%;*/
+    display: flex;
     transition: 1s transform;
     transform-origin: top center;
     float: left;
-    margin-right: 14.75%;
     position: relative;
-    backface-visibility: hidden;
   }
   .overlay-item {
     position: absolute;
