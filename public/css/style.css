@@ -16,13 +16,11 @@
   height: 70px;
   background-color: #1d1d1d;
   padding-top:10px;
-  /*background-color: #11292c;*/
-
 }
 
 body {
-font-family: 'StraightToHellBB.ttf', cursive;
-color: #aaa;
+  font-family: 'StraightToHellBB.ttf', cursive;
+  color: #aaa;
 }
 
 .menu-items a {
@@ -60,12 +58,9 @@ color: #aaa;
 }
 .sitename {
   font-family: 'StraightToHellSinnerBB.ttf', cursive;
-  /*font-size: .5em;*/
   display: inline-block;
   margin-right: 20px;
-  margin-left: -170px;
   text-shadow: 2px 2px #e50000;
-  /*margin-top: 20px;*/
   color:#aaa;
 }
 a.sitename {
@@ -80,8 +75,6 @@ a.sitename, a:visited.sitename {
 }
 .menu-items li {
   display: inline-block;
-  /*margin-right: 10px;*/
-  /*margin-left: 10px;*/
 }
 .menu-items a {
   text-decoration: none;
@@ -136,7 +129,6 @@ a.sitename, a:visited.sitename {
   .hide {
     display: none;
   }
-
 
   #menu:target .show {
     display: none;
