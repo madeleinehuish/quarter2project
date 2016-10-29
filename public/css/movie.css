@@ -7,9 +7,6 @@ body {
 }
 
 /* index.html tv art video */
-div.container-fluid {
-}
-
 div#tv_container{
   top: 10px;
   margin: auto;

@@ -5,6 +5,8 @@ $(document).ready(function() {
       if (!loggedIn) {
         window.location.href = '/index.html';
       }
+
+      // Movie Trailer Carousel
       let displacement = 0;
 
       const displace = function(amount) {

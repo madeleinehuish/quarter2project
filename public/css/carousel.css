@@ -3,6 +3,7 @@
 #viewscreen {
   margin: auto;
   margin-top: 10%;
+  margin-bottom: 2.5%;
   width: 640px;
   height: 360px;
   background-color: #333333;
