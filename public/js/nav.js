@@ -7,7 +7,8 @@
           url: '/users',
           type: 'GET',
           dataType: 'json'
-        }
+        };
+
         $.ajax(userOptions)
           .done((data) => {
             $('.firstNavItem').text(data.firstName);
@@ -24,14 +25,15 @@
                   window.location.href = '/main.html';
                 })
                 .fail(() => {
-    							alert('Unable to log out. Please try again.');
+                  alert('Unable to log out. Please try again.');
                 });
-          });
-            })
+            });
+          })
           .fail(() => {
             alert('Unable to access users.');
-          })
-      };
+          });
+      }
+
       // else {
       //   const $signup = $('<a>')
       //     .attr('href', '/signup.html')

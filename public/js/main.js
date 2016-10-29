@@ -1,5 +1,5 @@
 'use strict';
-$(document).ready(function() {
+$(document).ready(() => {
   $.getJSON('/token')
     .done((loggedIn) => {
       if (!loggedIn) {
@@ -14,12 +14,12 @@ $(document).ready(function() {
         $('.inside-row').css('transform', `translate3d(${displacement}px, 0, 0)`);
       };
 
-      $('.left').click(function() {
+      $('.left').click(() => {
         if (displacement <= -250) {
           displace(250);
         }
       });
-      $('.right').click(function() {
+      $('.right').click(() => {
         const numTiles = $('.trailer').length;
         const maxDis = (numTiles - 6) * -250;
 
@@ -38,7 +38,7 @@ $(document).ready(function() {
           }
         }
 
-        $('.trailer').click(function(event) {
+        $('.trailer').click((event) => {
           const url = $(event.currentTarget).find('.trailer-image').attr('src');
           const $iframe = $(`<iframe id="ytplayer" type="text/html" width="640" height="360" src="${url}" frameborder="0"/>`);
 
@@ -46,6 +46,7 @@ $(document).ready(function() {
           $('#viewscreen').append($iframe);
         });
       };
+
       $.getJSON('/movies')
         .done((movies) => {
           renderTrailers(movies);

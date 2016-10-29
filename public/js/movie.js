@@ -9,11 +9,11 @@
     $('#movie-synopsis-moviespage').text(movie.synopsis);
   };
   const renderComments = function(comments) {
-
     for (let i = 0; i < comments.length; i++) {
-      $('#movie-comments-moviespage').append($('<h4>').text('"' + comments[i].comment + '"'));
+      $('#movie-comments-moviespage').append($('<h4>').text(`" ${comments[i].comment} "`));
     }
   };
+
   $('#addFavorite').click((event) => {
     event.preventDefault();
     const options = {
@@ -23,6 +23,7 @@
       type: 'POST',
       url: '/favorites'
     };
+
     $.ajax(options)
       .done(() => {
         alert('added a book to favorites');
@@ -67,7 +68,7 @@
     };
 
     $.ajax(settings)
-      .done((user) => {
+      .done(() => {
         window.location.href = '/movies.html';
       })
       .fail(($xhr) => {

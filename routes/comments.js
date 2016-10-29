@@ -4,6 +4,8 @@ const boom = require('boom');
 const express = require('express');
 const knex = require('../knex');
 const { camelizeKeys, decamelizeKeys } = require('humps');
+
+// eslint-disable-next-line new-cap
 const router = express.Router();
 
 router.get('/comments/:movieId', (req, res, next) => {

@@ -6,13 +6,13 @@ const express = require('express');
 const jwt = require('jsonwebtoken');
 const knex = require('../knex');
 const { camelizeKeys } = require('humps');
+const postmark = require('postmark');
 
 // eslint-disable-next-line new-cap
 const router = express.Router();
 
 router.get('/token', (req, res) => {
   const token = req.cookies.token;
-  console.log('going into get token...');
 
   jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
     if (err) {
@@ -24,7 +24,7 @@ router.get('/token', (req, res) => {
 });
 
 router.post('/token', (req, res, next) => {
-  const { firstName, lastName, email, password } = req.body;
+  const { email, password } = req.body;
 
   if (!email || !email.trim()) {
     return next(boom.create(400, 'Email must not be blank'));
@@ -35,6 +35,17 @@ router.post('/token', (req, res, next) => {
   }
 
   let user;
+  const client = new postmark.Client('b2a5c213-b95c-417f-bf81-11e9525f603f');
+
+  // eslint-disable-next-line max-len
+  const message = 'Bwa ha ha ha ha ha ha ha ha ha. CH ch ch ah ah ah. Ee ee ee ee.';
+
+  client.sendEmail({
+    'From': 'screamqueen@kenmcgrady.com',
+    'To': email,
+    'Subject': 'Boo! Welcome to Scream Queen!',
+    'TextBody': message
+  });
 
   knex('users')
     .where('email', email)

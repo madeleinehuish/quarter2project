@@ -12,25 +12,22 @@ const router = express.Router();
 
 const authorize = function(req, res, next) {
   const token = req.cookies.token;
-  console.log(req.cookies.token);
+
   jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
     if (err) {
       return next(boom.create(401, 'Unauthorized'));
     }
-
     req.token = decoded;
-
     next();
   });
 };
 
-
 router.get('/users', authorize, (req, res, next) => {
-
   knex('users')
     .where('id', req.token.userId)
     .then((rows) => {
       const user = camelizeKeys(rows[0]);
+
       delete user.hashedPassword;
       res.send(user);
     })
@@ -38,22 +35,18 @@ router.get('/users', authorize, (req, res, next) => {
       next(err);
     });
 });
-
-
 router.post('/users', (req, res, next) => {
   const { email, password } = req.body;
 
   if (!email || !email.trim()) {
     return next(boom.create(400, 'Email must not be blank'));
   }
-
   if (!password || password.length < 8) {
     return next(boom.create(
       400,
       'Password must be at least 8 characters long'
     ));
   }
-
   knex('users')
     .select(knex.raw('1=1'))
     .where('email', email)
@@ -72,34 +65,26 @@ router.post('/users', (req, res, next) => {
       return knex('users')
         .insert(decamelizeKeys(insertUser), '*');
     })
-    // .then((user) => {
-    //   return res.send(user);
-    // })
     .then((rows) => {
       const user = camelizeKeys(rows[0]);
 
       delete user.hashedPassword;
-
       const expiry = new Date(Date.now() + 1000 * 60 * 60 * 3); // 3 hours
       const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET, {
         expiresIn: '3h'
       });
 
       res.cookie('accessToken', token, {
-      // res.cookie('userCookie', userCookie, {
         httpOnly: true,
         expires: expiry,
         secure: router.get('env') === 'production'
       });
-
       res.send(user);
     })
     .catch((err) => {
       next(err);
     });
-
 });
-
 router.patch('/users/:id', (req, res, next) => {
   const id = Number.parseInt(req.params.id);
 
@@ -107,6 +92,7 @@ router.patch('/users/:id', (req, res, next) => {
     return next();
   }
   const updateUser = {};
+
   knex('users')
     .where('id', id)
     .first()
@@ -114,22 +100,17 @@ router.patch('/users/:id', (req, res, next) => {
       if (!user) {
         throw boom.create(404, 'Not Found');
       }
-
       const { firstName, lastName, email, password } = req.body;
-
 
       if (firstName) {
         updateUser.firstName = firstName;
       }
-
       if (lastName) {
         updateUser.lastName = lastName;
       }
-
       if (email) {
         updateUser.email = email;
       }
-
       if (password) {
         if (password.length < 8) {
           const message = 'Password must be at least 8 characters long';
@@ -148,17 +129,16 @@ router.patch('/users/:id', (req, res, next) => {
         .catch((err) => {
           throw err;
         });
-      } else {
-        return knex('users')
-          .where('id', id)
-          .update(decamelizeKeys(updateUser), '*');
       }
+
+      return knex('users')
+        .where('id', id)
+        .update(decamelizeKeys(updateUser), '*');
     })
     .then((rows) => {
       const user = camelizeKeys(rows[0]);
 
       delete user.hashedPassword;
-
       const expiry = new Date(Date.now() + 1000 * 60 * 60 * 3); // 3 hours
       const token = jwt.sign({ userId: user.id }, process.env.JWT_SECRET, {
         expiresIn: '3h'
@@ -175,5 +155,4 @@ router.patch('/users/:id', (req, res, next) => {
       next(err);
     });
 });
-
 module.exports = router;

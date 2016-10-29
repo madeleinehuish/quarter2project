@@ -3,6 +3,8 @@ const boom = require('boom');
 const express = require('express');
 const knex = require('../knex');
 const { camelizeKeys, decamelizeKeys } = require('humps');
+
+// eslint-disable-next-line new-cap
 const router = express.Router();
 
 router.get('/favorites/:id', (req, res, next) => {
@@ -15,29 +17,6 @@ router.get('/favorites/:id', (req, res, next) => {
     const favorites = camelizeKeys(rows);
 
     res.send(favorites);
-  })
-  .catch((err) => {
-    next(err);
-  });
-});
-router.get('/favorites/check', (req, res, next) => {
-  const movieId = Number.parseInt(req.query.movieId);
-
-  if (!Number.isInteger(movieId)) {
-    return next(boom.create(400, 'Movie Id must be an integer'));
-  }
-  knex('movies')
-  .innerJoin('favorites', 'favorites.movie_id', 'movies.id')
-  .where({
-    'favorites.movie_id': movieId,
-    'favorites.user_id': userId
-  })
-  .first()
-  .then((row) => {
-    if (row) {
-      return res.send(true);
-    }
-    res.send(false);
   })
   .catch((err) => {
     next(err);
