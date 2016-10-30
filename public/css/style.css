@@ -19,7 +19,7 @@
 }
 
 body {
-  font-family: 'StraightToHellBB.ttf', cursive;
+  /*font-family: 'StraightToHellBB.ttf', cursive;*/
   color: #aaa;
 }
 
@@ -162,6 +162,32 @@ container-fluid {
 @font-face {
     font-family: 'StraightToHellSinnerBB.ttf';
     src: url('/font/StraightToHellSinnerBB.ttf');
+}
+
+/*favorites */
+h3 {
+    color: white;
+    font-size: 2em;
+}
+h4 {
+  font-size: 1em;
+}
+
+p span #movie-synopsis-moviespage {
+  font-family:'Helvetica' !important;
+  font-size: 1.5em;
+}
+
+p#comments {
+  margin-top: 10px;
+}
+
+button.add{
+  color: green;
+}
+
+button.remove{
+  color: red;
 }
 
 input[type=text], textarea {

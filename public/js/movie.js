@@ -1,4 +1,9 @@
 'use strict';
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+});
+
 (function() {
   const movId = sessionStorage.getItem('movieId');
   const usId = sessionStorage.getItem('userId');
@@ -26,10 +31,11 @@
 
     $.ajax(options)
       .done(() => {
-        alert('added a book to favorites');
+        $('button.add').tooltip();
+        // alert('Movie added to favorites');
       })
       .fail(() => {
-        alert('Unable to add this book to your favorites');
+        alert('Unable to add movie to favorites.');
       });
   });
   $('#removeFavorite').click((event) => {
@@ -44,10 +50,11 @@
 
     $.ajax(options)
       .done(() => {
-        alert('removed a book from your favorites');
+        $('button.remove').tooltip(2000);
+        // alert('removed a book from your favorites');
       })
       .fail(() => {
-        alert('unable to remove a book from your favorites');
+        alert('Unable to remove movie from favorites.');
       });
   });
   $('#commentsForm').submit((event) => {
