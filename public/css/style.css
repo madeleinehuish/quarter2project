@@ -190,6 +190,11 @@ button.remove{
   color: red;
 }
 
+h3.siteText.text-left {
+  padding: 40px 0 20px 0;
+  font-size: 1.5em;
+}
+
 input[type=text], textarea {
   @include transition(all 0.30s ease-in-out);
   outline: none;
