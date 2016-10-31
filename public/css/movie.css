@@ -18,3 +18,30 @@ div#tv_container img {
   -webkit-filter: drop-shadow(5px 5px 5px #4d0000);
   filter: drop-shadow(5px 5px 5px #4d0000);
 }
+
+/* front page scream image */
+.scream {
+  -webkit-animation: cssAnimation 1s 1 ease-in-out;
+  -moz-animation:  cssAnimation 1s 1 ease-in-out;
+
+  }
+  @-webkit-keyframes cssAnimation {
+  from {-webkit-transform: rotate(360deg) scale(0) skew(-360deg) translate(50px) ;
+  -moz-transform: rotate(360deg) scale(0) skew(-360deg) translate(50px) ;
+  -o-transform: rotate(360deg) scale(0) skew(-360deg) translate(50px) ;
+   }
+  to {-webkit-transform: rotate(360deg) scale(1) skew(180deg) translate(0px) ;
+  -moz-transform: rotate(360deg) scale(1) skew(180deg) translate(0px) ;
+  -o-transform: rotate(360deg) scale(1) skew(180deg) translate(0px) ;
+   }
+  }
+  @-moz-keyframes cssAnimation {
+  from {-webkit-transform: rotate(360deg) scale(0.25) skew(-180deg) translate(50px) ;
+  -moz-transform: rotate(360deg) scale(0.25) skew(-180deg) translate(50px) ;
+  -o-transform: rotate(360deg) scale(0.25) skew(-180deg) translate(50px) ;
+   }
+  to {-webkit-transform: rotate(360deg) scale(1) skew(180deg) translate(0px) ;
+  -moz-transform: rotate(360deg) scale(1) skew(180deg) translate(0px) ;
+  -o-transform: rotate(360deg) scale(1) skew(180deg) translate(0px) ;
+   }
+  }
